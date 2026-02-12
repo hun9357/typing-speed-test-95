@@ -1,0 +1,162 @@
+[
+  {
+    "id": "email-1",
+    "category": "email",
+    "title": "Project Deadline Extension Request",
+    "context": "You are responding to a client who asked about extending the project deadline.",
+    "content": "Dear Mr. Johnson,\n\nThank you for reaching out regarding the project deadline. I understand your concerns and would be happy to discuss potential options. Could we schedule a brief call this week to review the timeline together?\n\nBest regards",
+    "difficulty": "easy"
+  },
+  {
+    "id": "email-2",
+    "category": "email",
+    "title": "Meeting Follow-up with Action Items",
+    "context": "You are sending a follow-up email after today's team meeting.",
+    "content": "Hi Team,\n\nThank you for the productive meeting this morning. Here are the key action items we discussed:\n\n1. Sarah will update the client proposal by Friday\n2. Mike will review the budget estimates by Wednesday\n3. I will schedule our next check-in for next Monday\n\nPlease let me know if I missed anything. Looking forward to our progress!",
+    "difficulty": "medium"
+  },
+  {
+    "id": "email-3",
+    "category": "email",
+    "title": "New Employee Welcome Message",
+    "context": "You are welcoming a new team member who starts next week.",
+    "content": "Welcome to the team, Emily!\n\nWe're excited to have you joining us next Monday. I wanted to reach out and let you know that your workspace is ready, and IT will have your equipment set up by 9 AM.\n\nOn your first day, please come to the main reception area, and I'll meet you there at 8:45 AM for a brief orientation. We'll cover your schedule, introduce you to the team, and get you settled in.\n\nIf you have any questions before then, feel free to reach out anytime.\n\nLooking forward to working with you!",
+    "difficulty": "medium"
+  },
+  {
+    "id": "email-4",
+    "category": "email",
+    "title": "Vendor Invoice Inquiry",
+    "context": "You need to clarify details about an invoice received from a vendor.",
+    "content": "Good afternoon,\n\nI am writing regarding Invoice #45892 dated January 15, 2024. We noticed a discrepancy between the quoted amount in our purchase order ($2,450) and the invoiced amount ($2,650).\n\nCould you please provide a breakdown of the additional $200 charge? We want to ensure accurate payment processing and resolve this matter promptly.\n\nThank you for your assistance.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "email-5",
+    "category": "email",
+    "title": "Event Invitation to Stakeholders",
+    "context": "You are inviting key stakeholders to a quarterly business review meeting.",
+    "content": "Dear Colleagues,\n\nYou are cordially invited to our Q1 Business Review Meeting scheduled for March 15, 2024, from 2:00 PM to 4:00 PM in Conference Room B.\n\nAgenda:\n- Q1 Performance Summary\n- Market Analysis Update\n- Strategic Initiatives for Q2\n- Open Discussion\n\nLight refreshments will be provided. Please confirm your attendance by March 10th.\n\nWe look forward to your participation and valuable insights.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "support-1",
+    "category": "support",
+    "title": "Refund Request Response",
+    "context": "A customer is requesting a refund for a product they received damaged.",
+    "content": "Hello Sarah,\n\nI'm so sorry to hear that your order arrived damaged. That's definitely not the experience we want for our customers. I've processed a full refund to your original payment method, which should appear within 3-5 business days.\n\nIs there anything else I can help you with today?",
+    "difficulty": "easy"
+  },
+  {
+    "id": "support-2",
+    "category": "support",
+    "title": "Password Reset Instructions",
+    "context": "A user needs help resetting their account password.",
+    "content": "Hi Michael,\n\nThank you for contacting us about your password reset issue. I can definitely help you with that!\n\nPlease follow these steps:\n1. Go to our login page\n2. Click 'Forgot Password' below the login button\n3. Enter your registered email address\n4. Check your email for a reset link (it may take up to 5 minutes)\n5. Click the link and create your new password\n\nIf you don't receive the email within 10 minutes, please check your spam folder. Let me know if you need any further assistance!",
+    "difficulty": "medium"
+  },
+  {
+    "id": "support-3",
+    "category": "support",
+    "title": "Shipping Delay Notification",
+    "context": "You need to inform a customer about a delay in their shipment.",
+    "content": "Dear Valued Customer,\n\nI wanted to personally reach out regarding your order #78234. Unfortunately, we're experiencing a slight delay due to unexpected high demand and supply chain constraints.\n\nYour order was originally scheduled to ship on February 10th, but will now ship on February 17th. We sincerely apologize for this inconvenience.\n\nAs a token of our appreciation for your patience, we'd like to offer you a 15% discount on your next purchase. Your discount code is: THANKYOU15\n\nThank you for your understanding and continued support.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "support-4",
+    "category": "support",
+    "title": "Technical Issue Escalation",
+    "context": "A customer is experiencing a complex technical issue that needs escalation.",
+    "content": "Hello Jennifer,\n\nThank you for providing those details about the error you're experiencing. I understand how frustrating technical issues can be, especially when they impact your work.\n\nBased on the information you've shared, this appears to be a more complex issue that requires our technical team's expertise. I've escalated your case (Ticket #12849) to our Level 2 Support team, who will review your account logs and reach out within 24 hours.\n\nIn the meantime, here's a temporary workaround that might help: try clearing your browser cache and accessing the platform in incognito mode.\n\nYou'll receive an email update once our technical team has reviewed your case. We appreciate your patience!",
+    "difficulty": "hard"
+  },
+  {
+    "id": "support-5",
+    "category": "support",
+    "title": "Billing Dispute Resolution",
+    "context": "A customer is disputing a charge on their account.",
+    "content": "Dear Mr. Thompson,\n\nThank you for bringing this billing concern to our attention. I've thoroughly reviewed your account and found that the $49.99 charge on January 28th was for your annual subscription renewal.\n\nI understand you believed you had canceled your subscription in December. After checking our records, I can see that the cancellation request was submitted but may not have processed correctly due to a system error on our end.\n\nI sincerely apologize for this oversight. I have:\n1. Issued a full refund of $49.99 (please allow 5-7 business days)\n2. Confirmed your subscription cancellation\n3. Added a credit of $10 to your account for the inconvenience\n\nIs there anything else I can assist you with today?",
+    "difficulty": "hard"
+  },
+  {
+    "id": "legal-1",
+    "category": "legal",
+    "title": "Non-Disclosure Agreement Clause",
+    "context": "You are typing a standard NDA confidentiality clause for a client agreement.",
+    "content": "The Receiving Party agrees to hold all Confidential Information in strict confidence and not to disclose any Confidential Information to any third parties without the prior written consent of the Disclosing Party. This obligation shall survive the termination of this Agreement for a period of five (5) years.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "legal-2",
+    "category": "legal",
+    "title": "Terms of Service - User Obligations",
+    "context": "You are drafting user obligation terms for a software service agreement.",
+    "content": "Users agree to: (a) provide accurate and complete information when creating an account; (b) maintain the security of their password and account; (c) promptly notify the Company of any unauthorized use of their account; and (d) be responsible for all activities that occur under their account, whether or not authorized.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "legal-3",
+    "category": "legal",
+    "title": "Liability Limitation Clause",
+    "context": "You are typing a limitation of liability section for a service contract.",
+    "content": "IN NO EVENT SHALL THE COMPANY BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (i) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICE; (ii) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE SERVICE; (iii) ANY CONTENT OBTAINED FROM THE SERVICE; AND (iv) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "legal-4",
+    "category": "legal",
+    "title": "Independent Contractor Agreement",
+    "context": "You are drafting the relationship definition clause for a contractor agreement.",
+    "content": "The parties agree that Contractor is an independent contractor and not an employee, agent, partner, or joint venturer of the Company. Contractor shall have no authority to bind the Company in any manner whatsoever. Contractor is solely responsible for all taxes, withholdings, and other statutory obligations arising from compensation paid under this Agreement.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "legal-5",
+    "category": "legal",
+    "title": "Intellectual Property Rights Transfer",
+    "context": "You are typing an IP rights transfer clause for a work-for-hire agreement.",
+    "content": "Contractor hereby irrevocably assigns, transfers, and conveys to Company all right, title, and interest in and to any and all Work Product, including all intellectual property rights therein. \"Work Product\" means any and all inventions, discoveries, improvements, works of authorship, documentation, designs, software, and other materials created, developed, or conceived by Contractor in connection with the Services, whether alone or jointly with others.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "data-entry-1",
+    "category": "data-entry",
+    "title": "Customer Record Entry",
+    "context": "You are entering customer information into a database system.",
+    "content": "Name: Jennifer Martinez\nEmail: j.martinez@email.com\nPhone: (555) 123-4567\nAddress: 1234 Oak Street, Suite 567\nCity: San Francisco, CA 94102\nAccount Type: Premium Business\nStart Date: 2024-01-15",
+    "difficulty": "easy"
+  },
+  {
+    "id": "data-entry-2",
+    "category": "data-entry",
+    "title": "Inventory Stock Update",
+    "context": "You are updating inventory records with current stock levels.",
+    "content": "SKU: WH-2847-BLK | Product: Wireless Headphones Black | Qty: 342\nSKU: KB-5591-RGB | Product: Mechanical Keyboard RGB | Qty: 127\nSKU: MS-8834-WHT | Product: Ergonomic Mouse White | Qty: 289\nSKU: WC-4423-HD | Product: Webcam 1080p HD | Qty: 456\nSKU: DS-7712-ADJ | Product: Desk Stand Adjustable | Qty: 93",
+    "difficulty": "medium"
+  },
+  {
+    "id": "data-entry-3",
+    "category": "data-entry",
+    "title": "Financial Transaction Log",
+    "context": "You are recording daily financial transactions for accounting records.",
+    "content": "Date: 2024-02-12 | Trans ID: TX-89234 | Type: Sale | Amount: $1,247.50 | Customer: ABC Corp\nDate: 2024-02-12 | Trans ID: TX-89235 | Type: Refund | Amount: -$89.99 | Customer: John Smith\nDate: 2024-02-12 | Trans ID: TX-89236 | Type: Sale | Amount: $3,456.00 | Customer: XYZ Industries\nDate: 2024-02-12 | Trans ID: TX-89237 | Type: Payment | Amount: -$2,100.00 | Vendor: Office Supplies Ltd\nDate: 2024-02-12 | Trans ID: TX-89238 | Type: Sale | Amount: $567.25 | Customer: Sarah Johnson",
+    "difficulty": "hard"
+  },
+  {
+    "id": "data-entry-4",
+    "category": "data-entry",
+    "title": "Employee Timesheet Entry",
+    "context": "You are entering weekly timesheet data for payroll processing.",
+    "content": "Employee: Anderson, Michael | ID: EMP-1047\nWeek Ending: 2024-02-09\nMonday: 8.5 hours (Regular: 8.0, Overtime: 0.5)\nTuesday: 9.0 hours (Regular: 8.0, Overtime: 1.0)\nWednesday: 8.0 hours (Regular: 8.0, Overtime: 0.0)\nThursday: 10.5 hours (Regular: 8.0, Overtime: 2.5)\nFriday: 8.0 hours (Regular: 8.0, Overtime: 0.0)\nTotal: 44.0 hours (Regular: 40.0, Overtime: 4.0)",
+    "difficulty": "hard"
+  },
+  {
+    "id": "data-entry-5",
+    "category": "data-entry",
+    "title": "Medical Record Transcription",
+    "context": "You are transcribing patient vital signs and basic information.",
+    "content": "Patient: Williams, Robert D. | DOB: 1978-04-23 | MRN: 445892-A\nVisit Date: 2024-02-12 10:30 AM\nVitals: BP 128/82 | Pulse 74 bpm | Temp 98.4°F | Resp 16/min | O2 Sat 98%\nHeight: 5'11\" | Weight: 182 lbs | BMI: 25.4\nAllergies: Penicillin, Sulfa drugs\nCurrent Medications: Lisinopril 10mg daily, Metformin 500mg twice daily\nChief Complaint: Annual physical examination",
+    "difficulty": "hard"
+  }
+]

@@ -1,6 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import StreakDisplay from "@/components/StreakDisplay";
 
 export default function Home() {
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Load streak from localStorage
+    try {
+      const stored = localStorage.getItem("typing-test-streak-data");
+      if (stored) {
+        const data = JSON.parse(stored);
+        setCurrentStreak(data.currentStreak || 0);
+      }
+    } catch (error) {
+      console.error("Failed to load streak:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -14,12 +36,102 @@ export default function Home() {
             No download or registration required.
           </p>
 
-          <Link
-            href="/test"
-            className="inline-block bg-primary hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
-          >
-            Start Typing Test
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/test"
+              className="inline-block bg-primary hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
+            >
+              Start Typing Test
+            </Link>
+
+            <Link
+              href="/test/code"
+              className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              &lt;/&gt; Coding Test
+            </Link>
+
+            <Link
+              href="/daily"
+              className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              🔥 Daily Challenge
+            </Link>
+
+            <Link
+              href="/test/simulation"
+              className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              🏢 Real-World Simulation
+            </Link>
+          </div>
+
+          {!isLoading && currentStreak > 0 && (
+            <div className="mt-6 inline-block">
+              <StreakDisplay streak={currentStreak} size="medium" />
+            </div>
+          )}
+        </div>
+
+        {/* Feature Highlights */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Coding Test */}
+          <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl shadow-xl p-8 border-2 border-purple-200">
+            <div className="text-center">
+              <div className="text-4xl mb-4">&lt;/&gt;</div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Coding Typing Test
+              </h2>
+              <p className="text-gray-700 mb-6">
+                Test your programming typing speed with JavaScript, Python, SQL, and React JSX. Perfect for developers!
+              </p>
+              <Link
+                href="/test/code"
+                className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Start Coding Test
+              </Link>
+            </div>
+          </div>
+
+          {/* Daily Challenge */}
+          <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl shadow-xl p-8 border-2 border-orange-200">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🔥</div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Daily Typing Challenge
+              </h2>
+              <p className="text-gray-700 mb-6">
+                Test yourself with a new passage every day. Build streaks, track your progress, and compete with yourself!
+              </p>
+              <Link
+                href="/daily"
+                className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Try Today&apos;s Challenge
+              </Link>
+            </div>
+          </div>
+
+          {/* Real-World Simulation */}
+          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-xl p-8 border-2 border-emerald-200 md:col-span-2">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🏢</div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Real-World Job Simulations
+              </h2>
+              <p className="text-gray-700 mb-6">
+                Practice typing for real job scenarios: emails, customer support, legal documents, and data entry.
+                Get personalized feedback on your job readiness!
+              </p>
+              <Link
+                href="/test/simulation"
+                className="inline-block bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Try Simulation Mode
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Trust Signals */}

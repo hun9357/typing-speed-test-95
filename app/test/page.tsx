@@ -20,9 +20,27 @@ export default function TestPage() {
           <Link href="/" className="inline-block text-primary hover:text-blue-600 font-semibold mb-4">
             ← Back to Home
           </Link>
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Typing Speed Test
           </h1>
+
+          {/* Test Type Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <Link
+              href="/test/code"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <span>&lt;/&gt;</span>
+              <span>Try Coding Test</span>
+            </Link>
+            <Link
+              href="/test/simulation"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <span>🏢</span>
+              <span>Real-World Simulation</span>
+            </Link>
+          </div>
         </div>
 
         {/* Test Component */}

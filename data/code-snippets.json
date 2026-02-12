@@ -1,0 +1,142 @@
+[
+  {
+    "id": "js-1",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Simple arrow function",
+    "code": "const sum = (a, b) => a + b;"
+  },
+  {
+    "id": "js-2",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array filter method",
+    "code": "const numbers = [1, 2, 3, 4, 5];\nconst evens = numbers.filter(n => n % 2 === 0);"
+  },
+  {
+    "id": "js-3",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Event handler with destructuring",
+    "code": "const handleClick = (event) => {\n  event.preventDefault();\n  const { target } = event;\n  console.log(target.value);\n};"
+  },
+  {
+    "id": "js-4",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Promise-based API call",
+    "code": "fetch('/api/users')\n  .then(response => response.json())\n  .then(data => console.log(data))\n  .catch(error => console.error(error));"
+  },
+  {
+    "id": "js-5",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Async/await with error handling",
+    "code": "const fetchData = async (url) => {\n  try {\n    const response = await fetch(url);\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Error:', error);\n    throw error;\n  }\n};"
+  },
+  {
+    "id": "py-1",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Simple function with f-string",
+    "code": "def greet(name):\n    return f\"Hello, {name}!\""
+  },
+  {
+    "id": "py-2",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List comprehension",
+    "code": "numbers = [1, 2, 3, 4, 5]\nsquares = [n ** 2 for n in numbers]"
+  },
+  {
+    "id": "py-3",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Filter with lambda",
+    "code": "def filter_even(numbers):\n    return [n for n in numbers if n % 2 == 0]\n\nresult = filter_even([1, 2, 3, 4, 5, 6])"
+  },
+  {
+    "id": "py-4",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Dictionary comprehension",
+    "code": "users = ['alice', 'bob', 'charlie']\nuser_dict = {user: len(user) for user in users}\nprint(user_dict)"
+  },
+  {
+    "id": "py-5",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Class with decorator",
+    "code": "class DataProcessor:\n    def __init__(self, data):\n        self.data = data\n    \n    @property\n    def clean_data(self):\n        return [x.strip() for x in self.data if x]"
+  },
+  {
+    "id": "sql-1",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Basic SELECT query",
+    "code": "SELECT * FROM users WHERE active = true;"
+  },
+  {
+    "id": "sql-2",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Simple JOIN",
+    "code": "SELECT u.name, o.total\nFROM users u\nJOIN orders o ON u.id = o.user_id;"
+  },
+  {
+    "id": "sql-3",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "GROUP BY with HAVING",
+    "code": "SELECT product_name, COUNT(*) as total\nFROM orders\nGROUP BY product_name\nHAVING total > 10\nORDER BY total DESC;"
+  },
+  {
+    "id": "sql-4",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Subquery in WHERE",
+    "code": "SELECT name, email\nFROM users\nWHERE id IN (\n  SELECT user_id FROM orders\n  WHERE amount > 1000\n);"
+  },
+  {
+    "id": "sql-5",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Complex JOIN with aggregation",
+    "code": "SELECT u.name, COALESCE(SUM(o.amount), 0) as total\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nWHERE u.created_at > '2024-01-01'\nGROUP BY u.id, u.name\nHAVING total > 500;"
+  },
+  {
+    "id": "jsx-1",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Simple functional component",
+    "code": "const Button = ({ label }) => (\n  <button className=\"btn\">{label}</button>\n);"
+  },
+  {
+    "id": "jsx-2",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Component with children",
+    "code": "const Card = ({ title, children }) => (\n  <div className=\"card\">\n    <h2>{title}</h2>\n    {children}\n  </div>\n);"
+  },
+  {
+    "id": "jsx-3",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "List rendering with map",
+    "code": "const UserList = ({ users }) => (\n  <ul>\n    {users.map(user => (\n      <li key={user.id}>{user.name}</li>\n    ))}\n  </ul>\n);"
+  },
+  {
+    "id": "jsx-4",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Conditional rendering",
+    "code": "const Status = ({ isLoading, error, data }) => (\n  <div>\n    {isLoading && <p>Loading...</p>}\n    {error && <p className=\"error\">{error}</p>}\n    {data && <p>Success: {data}</p>}\n  </div>\n);"
+  },
+  {
+    "id": "jsx-5",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Component with hooks and events",
+    "code": "const SearchBar = ({ onSearch }) => {\n  const [query, setQuery] = useState('');\n  \n  const handleSubmit = (e) => {\n    e.preventDefault();\n    onSearch(query);\n  };\n  \n  return (\n    <form onSubmit={handleSubmit}>\n      <input\n        value={query}\n        onChange={(e) => setQuery(e.target.value)}\n        placeholder=\"Search...\"\n      />\n    </form>\n  );\n};"
+  }
+]
