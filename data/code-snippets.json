@@ -138,5 +138,2105 @@
     "difficulty": "hard",
     "description": "Component with hooks and events",
     "code": "const SearchBar = ({ onSearch }) => {\n  const [query, setQuery] = useState('');\n  \n  const handleSubmit = (e) => {\n    e.preventDefault();\n    onSearch(query);\n  };\n  \n  return (\n    <form onSubmit={handleSubmit}>\n      <input\n        value={query}\n        onChange={(e) => setQuery(e.target.value)}\n        placeholder=\"Search...\"\n      />\n    </form>\n  );\n};"
+  },
+  {
+    "id": "js-6",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Variable declaration with let",
+    "code": "let count = 0;\ncount++;"
+  },
+  {
+    "id": "js-7",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Template literal",
+    "code": "const name = \"World\";\nconsole.log(`Hello, ${name}!`);"
+  },
+  {
+    "id": "js-8",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array map method",
+    "code": "const numbers = [1, 2, 3];\nconst doubled = numbers.map(n => n * 2);"
+  },
+  {
+    "id": "js-9",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Object property shorthand",
+    "code": "const name = \"John\";\nconst age = 30;\nconst user = { name, age };"
+  },
+  {
+    "id": "js-10",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Destructuring assignment",
+    "code": "const { name, email } = user;\nconsole.log(name, email);"
+  },
+  {
+    "id": "js-11",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Spread operator with arrays",
+    "code": "const arr1 = [1, 2];\nconst arr2 = [...arr1, 3, 4];"
+  },
+  {
+    "id": "js-12",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Default parameters",
+    "code": "function greet(name = \"Guest\") {\n  return `Hello, ${name}!`;\n}"
+  },
+  {
+    "id": "js-13",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array find method",
+    "code": "const users = [{id: 1, name: \"Alice\"}];\nconst user = users.find(u => u.id === 1);"
+  },
+  {
+    "id": "js-14",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Ternary operator",
+    "code": "const status = age >= 18 ? \"adult\" : \"minor\";"
+  },
+  {
+    "id": "js-15",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "For...of loop",
+    "code": "for (const item of items) {\n  console.log(item);\n}"
+  },
+  {
+    "id": "js-16",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array includes method",
+    "code": "const fruits = [\"apple\", \"banana\"];\nconst hasApple = fruits.includes(\"apple\");"
+  },
+  {
+    "id": "js-17",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Object keys iteration",
+    "code": "Object.keys(obj).forEach(key => {\n  console.log(key, obj[key]);\n});"
+  },
+  {
+    "id": "js-18",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array push method",
+    "code": "const items = [];\nitems.push(\"new item\");"
+  },
+  {
+    "id": "js-19",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "String methods chain",
+    "code": "const result = str.trim().toLowerCase();"
+  },
+  {
+    "id": "js-20",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Logical OR default value",
+    "code": "const username = input || \"Anonymous\";"
+  },
+  {
+    "id": "js-21",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array join method",
+    "code": "const words = [\"Hello\", \"World\"];\nconst sentence = words.join(\" \");"
+  },
+  {
+    "id": "js-22",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "String split method",
+    "code": "const text = \"a,b,c\";\nconst items = text.split(\",\");"
+  },
+  {
+    "id": "js-23",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Math methods",
+    "code": "const random = Math.floor(Math.random() * 100);"
+  },
+  {
+    "id": "js-24",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array length property",
+    "code": "const count = items.length;\nif (count > 0) process();"
+  },
+  {
+    "id": "js-25",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Object spread",
+    "code": "const updated = { ...original, status: \"active\" };"
+  },
+  {
+    "id": "js-26",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "typeof operator",
+    "code": "if (typeof value === \"string\") {\n  console.log(value.toUpperCase());\n}"
+  },
+  {
+    "id": "js-27",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array slice method",
+    "code": "const first3 = items.slice(0, 3);"
+  },
+  {
+    "id": "js-28",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Nullish coalescing",
+    "code": "const value = input ?? defaultValue;"
+  },
+  {
+    "id": "js-29",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Optional chaining",
+    "code": "const city = user?.address?.city;"
+  },
+  {
+    "id": "js-30",
+    "language": "javascript",
+    "difficulty": "easy",
+    "description": "Array some method",
+    "code": "const hasAdmin = users.some(u => u.role === \"admin\");"
+  },
+  {
+    "id": "js-31",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array reduce method",
+    "code": "const total = numbers.reduce((sum, n) => sum + n, 0);"
+  },
+  {
+    "id": "js-32",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Class with constructor",
+    "code": "class User {\n  constructor(name, email) {\n    this.name = name;\n    this.email = email;\n  }\n}"
+  },
+  {
+    "id": "js-33",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "ES6 module export",
+    "code": "export const API_URL = \"https://api.example.com\";\nexport function fetchData() {\n  return fetch(API_URL);\n}"
+  },
+  {
+    "id": "js-34",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Async function",
+    "code": "async function loadUser(id) {\n  const response = await fetch(`/api/users/${id}`);\n  return response.json();\n}"
+  },
+  {
+    "id": "js-35",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Object destructuring with rename",
+    "code": "const { name: userName, email: userEmail } = user;"
+  },
+  {
+    "id": "js-36",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array filter and map chain",
+    "code": "const activeNames = users\n  .filter(u => u.active)\n  .map(u => u.name);"
+  },
+  {
+    "id": "js-37",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Promise.all pattern",
+    "code": "const [users, posts] = await Promise.all([\n  fetchUsers(),\n  fetchPosts()\n]);"
+  },
+  {
+    "id": "js-38",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "setTimeout with arrow function",
+    "code": "setTimeout(() => {\n  console.log(\"Delayed message\");\n}, 1000);"
+  },
+  {
+    "id": "js-39",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Set data structure",
+    "code": "const unique = [...new Set(array)];\nconsole.log(unique);"
+  },
+  {
+    "id": "js-40",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Map data structure",
+    "code": "const cache = new Map();\ncache.set(\"key\", value);\nconst val = cache.get(\"key\");"
+  },
+  {
+    "id": "js-41",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Try-catch block",
+    "code": "try {\n  const data = JSON.parse(jsonString);\n  process(data);\n} catch (error) {\n  console.error(error);\n}"
+  },
+  {
+    "id": "js-42",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array every method",
+    "code": "const allValid = items.every(item => item.isValid);"
+  },
+  {
+    "id": "js-43",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Object.entries iteration",
+    "code": "Object.entries(obj).forEach(([key, value]) => {\n  console.log(`${key}: ${value}`);\n});"
+  },
+  {
+    "id": "js-44",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Function returning object",
+    "code": "const createUser = (name, email) => ({\n  name,\n  email,\n  createdAt: new Date()\n});"
+  },
+  {
+    "id": "js-45",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Switch statement",
+    "code": "switch (action.type) {\n  case \"ADD\":\n    return [...state, action.payload];\n  case \"REMOVE\":\n    return state.filter(item => item.id !== action.id);\n  default:\n    return state;\n}"
+  },
+  {
+    "id": "js-46",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Class method",
+    "code": "class Calculator {\n  add(a, b) {\n    return a + b;\n  }\n  \n  subtract(a, b) {\n    return a - b;\n  }\n}"
+  },
+  {
+    "id": "js-47",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array flatMap",
+    "code": "const nested = [[1, 2], [3, 4]];\nconst flat = nested.flatMap(arr => arr);"
+  },
+  {
+    "id": "js-48",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Rest parameters",
+    "code": "function sum(...numbers) {\n  return numbers.reduce((a, b) => a + b, 0);\n}"
+  },
+  {
+    "id": "js-49",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Regular expression test",
+    "code": "const emailRegex = /^[^@]+@[^@]+\\.[^@]+$/;\nconst isValid = emailRegex.test(email);"
+  },
+  {
+    "id": "js-50",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array sort with comparator",
+    "code": "const sorted = items.sort((a, b) => \n  a.name.localeCompare(b.name)\n);"
+  },
+  {
+    "id": "js-51",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Local storage usage",
+    "code": "localStorage.setItem(\"user\", JSON.stringify(user));\nconst saved = JSON.parse(localStorage.getItem(\"user\"));"
+  },
+  {
+    "id": "js-52",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Date formatting",
+    "code": "const date = new Date();\nconst formatted = date.toLocaleDateString(\"en-US\");"
+  },
+  {
+    "id": "js-53",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Array find with default",
+    "code": "const user = users.find(u => u.id === id) || null;"
+  },
+  {
+    "id": "js-54",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Object.assign for merge",
+    "code": "const merged = Object.assign({}, defaults, options);"
+  },
+  {
+    "id": "js-55",
+    "language": "javascript",
+    "difficulty": "medium",
+    "description": "Immediately invoked function",
+    "code": "(async () => {\n  const data = await fetchData();\n  console.log(data);\n})();"
+  },
+  {
+    "id": "js-56",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Complex reduce with object accumulation",
+    "code": "const grouped = items.reduce((acc, item) => {\n  const key = item.category;\n  acc[key] = acc[key] || [];\n  acc[key].push(item);\n  return acc;\n}, {});"
+  },
+  {
+    "id": "js-57",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Custom hook pattern",
+    "code": "function useDebounce(value, delay) {\n  const [debounced, setDebounced] = useState(value);\n  \n  useEffect(() => {\n    const timer = setTimeout(() => setDebounced(value), delay);\n    return () => clearTimeout(timer);\n  }, [value, delay]);\n  \n  return debounced;\n}"
+  },
+  {
+    "id": "js-58",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Closure with private variable",
+    "code": "function createCounter() {\n  let count = 0;\n  return {\n    increment: () => ++count,\n    decrement: () => --count,\n    get: () => count\n  };\n}"
+  },
+  {
+    "id": "js-59",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Promise with timeout",
+    "code": "const fetchWithTimeout = (url, timeout = 5000) => {\n  return Promise.race([\n    fetch(url),\n    new Promise((_, reject) => \n      setTimeout(() => reject(new Error(\"Timeout\")), timeout)\n    )\n  ]);\n};"
+  },
+  {
+    "id": "js-60",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Memoization function",
+    "code": "function memoize(fn) {\n  const cache = new Map();\n  return (...args) => {\n    const key = JSON.stringify(args);\n    if (cache.has(key)) return cache.get(key);\n    const result = fn(...args);\n    cache.set(key, result);\n    return result;\n  };\n}"
+  },
+  {
+    "id": "js-61",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Deep clone object",
+    "code": "function deepClone(obj) {\n  if (obj === null || typeof obj !== \"object\") return obj;\n  if (obj instanceof Date) return new Date(obj);\n  if (obj instanceof Array) return obj.map(item => deepClone(item));\n  return Object.fromEntries(\n    Object.entries(obj).map(([k, v]) => [k, deepClone(v)])\n  );\n}"
+  },
+  {
+    "id": "js-62",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Generator function",
+    "code": "function* idGenerator() {\n  let id = 1;\n  while (true) {\n    yield id++;\n  }\n}\n\nconst gen = idGenerator();\nconst id1 = gen.next().value;"
+  },
+  {
+    "id": "js-63",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Proxy for validation",
+    "code": "const handler = {\n  set(target, prop, value) {\n    if (prop === \"age\" && typeof value !== \"number\") {\n      throw new TypeError(\"Age must be a number\");\n    }\n    target[prop] = value;\n    return true;\n  }\n};\nconst user = new Proxy({}, handler);"
+  },
+  {
+    "id": "js-64",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Currying function",
+    "code": "const curry = (fn) => {\n  return function curried(...args) {\n    if (args.length >= fn.length) {\n      return fn.apply(this, args);\n    }\n    return (...moreArgs) => curried(...args, ...moreArgs);\n  };\n};"
+  },
+  {
+    "id": "js-65",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Custom event emitter",
+    "code": "class EventEmitter {\n  constructor() {\n    this.events = {};\n  }\n  \n  on(event, callback) {\n    if (!this.events[event]) this.events[event] = [];\n    this.events[event].push(callback);\n  }\n  \n  emit(event, data) {\n    this.events[event]?.forEach(cb => cb(data));\n  }\n}"
+  },
+  {
+    "id": "js-66",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Async queue processor",
+    "code": "class AsyncQueue {\n  constructor(concurrency = 1) {\n    this.concurrency = concurrency;\n    this.running = 0;\n    this.queue = [];\n  }\n  \n  async add(fn) {\n    while (this.running >= this.concurrency) {\n      await new Promise(resolve => this.queue.push(resolve));\n    }\n    this.running++;\n    const result = await fn();\n    this.running--;\n    this.queue.shift()?.();\n    return result;\n  }\n}"
+  },
+  {
+    "id": "js-67",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Debounce implementation",
+    "code": "function debounce(func, wait) {\n  let timeout;\n  return function executedFunction(...args) {\n    const later = () => {\n      clearTimeout(timeout);\n      func(...args);\n    };\n    clearTimeout(timeout);\n    timeout = setTimeout(later, wait);\n  };\n}"
+  },
+  {
+    "id": "js-68",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Throttle implementation",
+    "code": "function throttle(func, limit) {\n  let inThrottle;\n  return function(...args) {\n    if (!inThrottle) {\n      func.apply(this, args);\n      inThrottle = true;\n      setTimeout(() => inThrottle = false, limit);\n    }\n  };\n}"
+  },
+  {
+    "id": "js-69",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Compose functions",
+    "code": "const compose = (...fns) => x => \n  fns.reduceRight((acc, fn) => fn(acc), x);\n\nconst addOne = x => x + 1;\nconst double = x => x * 2;\nconst addOneThenDouble = compose(double, addOne);"
+  },
+  {
+    "id": "js-70",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Pipe functions",
+    "code": "const pipe = (...fns) => x => \n  fns.reduce((acc, fn) => fn(acc), x);\n\nconst result = pipe(\n  x => x + 1,\n  x => x * 2,\n  x => x - 3\n)(5);"
+  },
+  {
+    "id": "js-71",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Retry with exponential backoff",
+    "code": "async function retryWithBackoff(fn, maxRetries = 3) {\n  for (let i = 0; i < maxRetries; i++) {\n    try {\n      return await fn();\n    } catch (error) {\n      if (i === maxRetries - 1) throw error;\n      await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));\n    }\n  }\n}"
+  },
+  {
+    "id": "js-72",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "WeakMap for private data",
+    "code": "const privateData = new WeakMap();\n\nclass Person {\n  constructor(name, ssn) {\n    this.name = name;\n    privateData.set(this, { ssn });\n  }\n  \n  getSSN() {\n    return privateData.get(this).ssn;\n  }\n}"
+  },
+  {
+    "id": "js-73",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Observer pattern",
+    "code": "class Subject {\n  constructor() {\n    this.observers = [];\n  }\n  \n  subscribe(observer) {\n    this.observers.push(observer);\n  }\n  \n  notify(data) {\n    this.observers.forEach(obs => obs.update(data));\n  }\n}"
+  },
+  {
+    "id": "js-74",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Singleton pattern",
+    "code": "class Database {\n  constructor() {\n    if (Database.instance) {\n      return Database.instance;\n    }\n    this.connection = null;\n    Database.instance = this;\n  }\n  \n  connect() {\n    this.connection = \"connected\";\n  }\n}"
+  },
+  {
+    "id": "js-75",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Factory pattern",
+    "code": "class UserFactory {\n  static create(type) {\n    switch (type) {\n      case \"admin\":\n        return new AdminUser();\n      case \"guest\":\n        return new GuestUser();\n      default:\n        return new RegularUser();\n    }\n  }\n}"
+  },
+  {
+    "id": "js-76",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Flatten nested array recursively",
+    "code": "function flatten(arr) {\n  return arr.reduce((acc, item) => {\n    return acc.concat(\n      Array.isArray(item) ? flatten(item) : item\n    );\n  }, []);\n}"
+  },
+  {
+    "id": "js-77",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Binary search implementation",
+    "code": "function binarySearch(arr, target) {\n  let left = 0, right = arr.length - 1;\n  \n  while (left <= right) {\n    const mid = Math.floor((left + right) / 2);\n    if (arr[mid] === target) return mid;\n    if (arr[mid] < target) left = mid + 1;\n    else right = mid - 1;\n  }\n  return -1;\n}"
+  },
+  {
+    "id": "js-78",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "Deep merge objects",
+    "code": "function deepMerge(target, source) {\n  const result = { ...target };\n  for (const key in source) {\n    if (source[key] instanceof Object && key in target) {\n      result[key] = deepMerge(target[key], source[key]);\n    } else {\n      result[key] = source[key];\n    }\n  }\n  return result;\n}"
+  },
+  {
+    "id": "js-79",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "LRU Cache implementation",
+    "code": "class LRUCache {\n  constructor(capacity) {\n    this.capacity = capacity;\n    this.cache = new Map();\n  }\n  \n  get(key) {\n    if (!this.cache.has(key)) return -1;\n    const val = this.cache.get(key);\n    this.cache.delete(key);\n    this.cache.set(key, val);\n    return val;\n  }\n  \n  put(key, value) {\n    this.cache.delete(key);\n    this.cache.set(key, value);\n    if (this.cache.size > this.capacity) {\n      this.cache.delete(this.cache.keys().next().value);\n    }\n  }\n}"
+  },
+  {
+    "id": "js-80",
+    "language": "javascript",
+    "difficulty": "hard",
+    "description": "State machine pattern",
+    "code": "class StateMachine {\n  constructor(initial, transitions) {\n    this.state = initial;\n    this.transitions = transitions;\n  }\n  \n  transition(action) {\n    const next = this.transitions[this.state]?.[action];\n    if (next) {\n      this.state = next;\n      return true;\n    }\n    return false;\n  }\n}"
+  },
+  {
+    "id": "py-6",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Basic function",
+    "code": "def add(a, b):\n    return a + b"
+  },
+  {
+    "id": "py-7",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List creation",
+    "code": "numbers = [1, 2, 3, 4, 5]\nprint(numbers)"
+  },
+  {
+    "id": "py-8",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "For loop",
+    "code": "for i in range(5):\n    print(i)"
+  },
+  {
+    "id": "py-9",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "String format",
+    "code": "name = \"Alice\"\nmessage = f\"Hello, {name}!\""
+  },
+  {
+    "id": "py-10",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List append",
+    "code": "items = []\nitems.append(\"new item\")\nprint(items)"
+  },
+  {
+    "id": "py-11",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Dictionary creation",
+    "code": "user = {\"name\": \"John\", \"age\": 30}\nprint(user[\"name\"])"
+  },
+  {
+    "id": "py-12",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "If-else statement",
+    "code": "if age >= 18:\n    status = \"adult\"\nelse:\n    status = \"minor\""
+  },
+  {
+    "id": "py-13",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List slicing",
+    "code": "numbers = [1, 2, 3, 4, 5]\nfirst_three = numbers[:3]"
+  },
+  {
+    "id": "py-14",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "String methods",
+    "code": "text = \"  Hello World  \"\ncleaned = text.strip().lower()"
+  },
+  {
+    "id": "py-15",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List length",
+    "code": "items = [1, 2, 3]\ncount = len(items)"
+  },
+  {
+    "id": "py-16",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Type checking",
+    "code": "if isinstance(value, str):\n    print(value.upper())"
+  },
+  {
+    "id": "py-17",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Multiple assignment",
+    "code": "x, y, z = 1, 2, 3\nprint(x, y, z)"
+  },
+  {
+    "id": "py-18",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "String join",
+    "code": "words = [\"Hello\", \"World\"]\nsentence = \" \".join(words)"
+  },
+  {
+    "id": "py-19",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "String split",
+    "code": "text = \"a,b,c\"\nitems = text.split(\",\")"
+  },
+  {
+    "id": "py-20",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Range usage",
+    "code": "numbers = list(range(1, 11))\nprint(numbers)"
+  },
+  {
+    "id": "py-21",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List in operator",
+    "code": "fruits = [\"apple\", \"banana\"]\nhas_apple = \"apple\" in fruits"
+  },
+  {
+    "id": "py-22",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Dict get method",
+    "code": "user = {\"name\": \"Alice\"}\nemail = user.get(\"email\", \"no email\")"
+  },
+  {
+    "id": "py-23",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Enumerate usage",
+    "code": "for i, item in enumerate(items):\n    print(f\"{i}: {item}\")"
+  },
+  {
+    "id": "py-24",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "List extend",
+    "code": "list1 = [1, 2]\nlist1.extend([3, 4])\nprint(list1)"
+  },
+  {
+    "id": "py-25",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Min and max",
+    "code": "numbers = [5, 2, 8, 1, 9]\nminimum = min(numbers)\nmaximum = max(numbers)"
+  },
+  {
+    "id": "py-26",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Sum function",
+    "code": "numbers = [1, 2, 3, 4, 5]\ntotal = sum(numbers)"
+  },
+  {
+    "id": "py-27",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Sorted function",
+    "code": "numbers = [3, 1, 4, 1, 5]\nsorted_nums = sorted(numbers)"
+  },
+  {
+    "id": "py-28",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Zip function",
+    "code": "names = [\"Alice\", \"Bob\"]\nages = [25, 30]\npairs = list(zip(names, ages))"
+  },
+  {
+    "id": "py-29",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "Any and all",
+    "code": "values = [True, True, False]\nall_true = all(values)\nany_true = any(values)"
+  },
+  {
+    "id": "py-30",
+    "language": "python",
+    "difficulty": "easy",
+    "description": "String formatting",
+    "code": "name = \"Alice\"\nage = 30\ninfo = f\"{name} is {age} years old\""
+  },
+  {
+    "id": "py-31",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "List comprehension with condition",
+    "code": "numbers = [1, 2, 3, 4, 5]\nevens = [n for n in numbers if n % 2 == 0]\nprint(evens)"
+  },
+  {
+    "id": "py-32",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Dict comprehension",
+    "code": "numbers = [1, 2, 3, 4]\nsquares = {n: n**2 for n in numbers}\nprint(squares)"
+  },
+  {
+    "id": "py-33",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Lambda function",
+    "code": "multiply = lambda x, y: x * y\nresult = multiply(5, 3)"
+  },
+  {
+    "id": "py-34",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Map function",
+    "code": "numbers = [1, 2, 3, 4]\nsquared = list(map(lambda x: x**2, numbers))"
+  },
+  {
+    "id": "py-35",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Filter function",
+    "code": "numbers = [1, 2, 3, 4, 5, 6]\nevens = list(filter(lambda x: x % 2 == 0, numbers))"
+  },
+  {
+    "id": "py-36",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Try-except block",
+    "code": "try:\n    result = int(input_value)\nexcept ValueError:\n    result = 0"
+  },
+  {
+    "id": "py-37",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "With statement for file",
+    "code": "with open(\"data.txt\", \"r\") as f:\n    content = f.read()\n    print(content)"
+  },
+  {
+    "id": "py-38",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Class definition",
+    "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    \n    def greet(self):\n        return f\"Hi, I'm {self.name}\""
+  },
+  {
+    "id": "py-39",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Multiple exception handling",
+    "code": "try:\n    value = data[key]\nexcept KeyError:\n    value = None\nexcept TypeError:\n    value = []"
+  },
+  {
+    "id": "py-40",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Args and kwargs",
+    "code": "def func(*args, **kwargs):\n    print(args)\n    print(kwargs)"
+  },
+  {
+    "id": "py-41",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Default dict usage",
+    "code": "from collections import defaultdict\n\ncounts = defaultdict(int)\nfor item in items:\n    counts[item] += 1"
+  },
+  {
+    "id": "py-42",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Counter usage",
+    "code": "from collections import Counter\n\nitems = [\"a\", \"b\", \"a\", \"c\", \"b\", \"a\"]\ncounts = Counter(items)"
+  },
+  {
+    "id": "py-43",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Set operations",
+    "code": "set1 = {1, 2, 3}\nset2 = {2, 3, 4}\nunion = set1 | set2\nintersection = set1 & set2"
+  },
+  {
+    "id": "py-44",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "String replace",
+    "code": "text = \"Hello World\"\nnew_text = text.replace(\"World\", \"Python\")"
+  },
+  {
+    "id": "py-45",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Json parsing",
+    "code": "import json\n\ndata = json.loads(json_string)\njson_output = json.dumps(data, indent=2)"
+  },
+  {
+    "id": "py-46",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Date time usage",
+    "code": "from datetime import datetime\n\nnow = datetime.now()\nformatted = now.strftime(\"%Y-%m-%d %H:%M:%S\")"
+  },
+  {
+    "id": "py-47",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Regular expression",
+    "code": "import re\n\npattern = r\"d+\"\nmatches = re.findall(pattern, text)"
+  },
+  {
+    "id": "py-48",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Path manipulation",
+    "code": "from pathlib import Path\n\nfile_path = Path(\"data/file.txt\")\nif file_path.exists():\n    content = file_path.read_text()"
+  },
+  {
+    "id": "py-49",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Reduce function",
+    "code": "from functools import reduce\n\nnumbers = [1, 2, 3, 4, 5]\ntotal = reduce(lambda x, y: x + y, numbers)"
+  },
+  {
+    "id": "py-50",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Partial function",
+    "code": "from functools import partial\n\ndef multiply(x, y):\n    return x * y\n\ndouble = partial(multiply, 2)"
+  },
+  {
+    "id": "py-51",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Sorting with key",
+    "code": "users = [{\"name\": \"Bob\", \"age\": 30}, {\"name\": \"Alice\", \"age\": 25}]\nsorted_users = sorted(users, key=lambda u: u[\"age\"])"
+  },
+  {
+    "id": "py-52",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Groupby usage",
+    "code": "from itertools import groupby\n\nitems = [(\"a\", 1), (\"a\", 2), (\"b\", 3)]\nfor key, group in groupby(items, key=lambda x: x[0]):\n    print(key, list(group))"
+  },
+  {
+    "id": "py-53",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Chain iterables",
+    "code": "from itertools import chain\n\nlist1 = [1, 2, 3]\nlist2 = [4, 5, 6]\ncombined = list(chain(list1, list2))"
+  },
+  {
+    "id": "py-54",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Property decorator",
+    "code": "class Circle:\n    def __init__(self, radius):\n        self._radius = radius\n    \n    @property\n    def area(self):\n        return 3.14 * self._radius ** 2"
+  },
+  {
+    "id": "py-55",
+    "language": "python",
+    "difficulty": "medium",
+    "description": "Static method",
+    "code": "class MathUtils:\n    @staticmethod\n    def add(a, b):\n        return a + b\n\nresult = MathUtils.add(5, 3)"
+  },
+  {
+    "id": "py-56",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Decorator function",
+    "code": "def timer(func):\n    import time\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end-start}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(1)"
+  },
+  {
+    "id": "py-57",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Context manager",
+    "code": "class FileManager:\n    def __init__(self, filename, mode):\n        self.filename = filename\n        self.mode = mode\n        self.file = None\n    \n    def __enter__(self):\n        self.file = open(self.filename, self.mode)\n        return self.file\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        if self.file:\n            self.file.close()"
+  },
+  {
+    "id": "py-58",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Generator function",
+    "code": "def fibonacci(n):\n    a, b = 0, 1\n    for _ in range(n):\n        yield a\n        a, b = b, a + b\n\nfor num in fibonacci(10):\n    print(num)"
+  },
+  {
+    "id": "py-59",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Metaclass definition",
+    "code": "class SingletonMeta(type):\n    _instances = {}\n    \n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]\n\nclass Database(metaclass=SingletonMeta):\n    pass"
+  },
+  {
+    "id": "py-60",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Async function",
+    "code": "import asyncio\n\nasync def fetch_data(url):\n    await asyncio.sleep(1)\n    return f\"Data from {url}\"\n\nasync def main():\n    result = await fetch_data(\"https://api.example.com\")\n    print(result)"
+  },
+  {
+    "id": "py-61",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Multiple async tasks",
+    "code": "import asyncio\n\nasync def main():\n    tasks = [\n        fetch_data(url1),\n        fetch_data(url2),\n        fetch_data(url3)\n    ]\n    results = await asyncio.gather(*tasks)\n    return results"
+  },
+  {
+    "id": "py-62",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Class inheritance",
+    "code": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    \n    def speak(self):\n        raise NotImplementedError\n\nclass Dog(Animal):\n    def speak(self):\n        return f\"{self.name} says Woof!\""
+  },
+  {
+    "id": "py-63",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Abstract base class",
+    "code": "from abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    \n    def area(self):\n        return self.width * self.height"
+  },
+  {
+    "id": "py-64",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Dataclass usage",
+    "code": "from dataclasses import dataclass\n\n@dataclass\nclass User:\n    name: str\n    email: str\n    age: int = 0\n    \n    def greet(self):\n        return f\"Hi, I'm {self.name}\""
+  },
+  {
+    "id": "py-65",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Type hints with generics",
+    "code": "from typing import List, Dict, Optional\n\ndef process_items(items: List[Dict[str, int]]) -> Optional[int]:\n    if not items:\n        return None\n    return sum(item.get(\"value\", 0) for item in items)"
+  },
+  {
+    "id": "py-66",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Recursive function with memoization",
+    "code": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fibonacci(n: int) -> int:\n    if n < 2:\n        return n\n    return fibonacci(n - 1) + fibonacci(n - 2)"
+  },
+  {
+    "id": "py-67",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Custom iterator",
+    "code": "class Countdown:\n    def __init__(self, start):\n        self.current = start\n    \n    def __iter__(self):\n        return self\n    \n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        self.current -= 1\n        return self.current + 1"
+  },
+  {
+    "id": "py-68",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Enum usage",
+    "code": "from enum import Enum\n\nclass Status(Enum):\n    PENDING = \"pending\"\n    ACTIVE = \"active\"\n    COMPLETED = \"completed\"\n\ncurrent_status = Status.ACTIVE\nif current_status == Status.ACTIVE:\n    process()"
+  },
+  {
+    "id": "py-69",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Pickle serialization",
+    "code": "import pickle\n\ndata = {\"name\": \"Alice\", \"scores\": [95, 87, 92]}\n\nwith open(\"data.pkl\", \"wb\") as f:\n    pickle.dump(data, f)\n\nwith open(\"data.pkl\", \"rb\") as f:\n    loaded = pickle.load(f)"
+  },
+  {
+    "id": "py-70",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Thread pool executor",
+    "code": "from concurrent.futures import ThreadPoolExecutor\n\ndef process_item(item):\n    return item * 2\n\nwith ThreadPoolExecutor(max_workers=4) as executor:\n    results = list(executor.map(process_item, items))"
+  },
+  {
+    "id": "py-71",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Process pool executor",
+    "code": "from concurrent.futures import ProcessPoolExecutor\n\ndef cpu_intensive(n):\n    return sum(i * i for i in range(n))\n\nwith ProcessPoolExecutor() as executor:\n    futures = [executor.submit(cpu_intensive, n) for n in range(10)]\n    results = [f.result() for f in futures]"
+  },
+  {
+    "id": "py-72",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Named tuple",
+    "code": "from collections import namedtuple\n\nPoint = namedtuple(\"Point\", [\"x\", \"y\"])\np = Point(10, 20)\nprint(f\"x={p.x}, y={p.y}\")"
+  },
+  {
+    "id": "py-73",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Custom exception",
+    "code": "class ValidationError(Exception):\n    def __init__(self, field, message):\n        self.field = field\n        self.message = message\n        super().__init__(f\"{field}: {message}\")\n\nraise ValidationError(\"email\", \"Invalid format\")"
+  },
+  {
+    "id": "py-74",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Descriptor protocol",
+    "code": "class Validator:\n    def __init__(self, min_value):\n        self.min_value = min_value\n    \n    def __set_name__(self, owner, name):\n        self.name = name\n    \n    def __get__(self, obj, type):\n        return obj.__dict__.get(self.name)\n    \n    def __set__(self, obj, value):\n        if value < self.min_value:\n            raise ValueError(f\"{self.name} must be >= {self.min_value}\")\n        obj.__dict__[self.name] = value"
+  },
+  {
+    "id": "py-75",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Slots for memory optimization",
+    "code": "class Point:\n    __slots__ = [\"x\", \"y\"]\n    \n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\np = Point(10, 20)"
+  },
+  {
+    "id": "py-76",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Deep copy vs shallow copy",
+    "code": "import copy\n\noriginal = {\"a\": [1, 2, 3]}\nshallow = copy.copy(original)\ndeep = copy.deepcopy(original)\n\noriginal[\"a\"].append(4)\nprint(shallow[\"a\"])  # [1, 2, 3, 4]\nprint(deep[\"a\"])     # [1, 2, 3]"
+  },
+  {
+    "id": "py-77",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Operator overloading",
+    "code": "class Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    \n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)\n    \n    def __repr__(self):\n        return f\"Vector({self.x}, {self.y})\""
+  },
+  {
+    "id": "py-78",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Weak references",
+    "code": "import weakref\n\nclass ExpensiveObject:\n    pass\n\nobj = ExpensiveObject()\nweak_ref = weakref.ref(obj)\n\nif weak_ref() is not None:\n    print(\"Object still exists\")"
+  },
+  {
+    "id": "py-79",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Method chaining",
+    "code": "class QueryBuilder:\n    def __init__(self):\n        self.query = \"\"\n    \n    def select(self, fields):\n        self.query += f\"SELECT {fields} \"\n        return self\n    \n    def where(self, condition):\n        self.query += f\"WHERE {condition} \"\n        return self\n    \n    def build(self):\n        return self.query"
+  },
+  {
+    "id": "py-80",
+    "language": "python",
+    "difficulty": "hard",
+    "description": "Coroutine with send",
+    "code": "def moving_average():\n    total = 0\n    count = 0\n    average = None\n    while True:\n        value = yield average\n        total += value\n        count += 1\n        average = total / count\n\navg = moving_average()\nnext(avg)\nresult = avg.send(10)"
+  },
+  {
+    "id": "sql-6",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Select with LIMIT",
+    "code": "SELECT * FROM users LIMIT 10;"
+  },
+  {
+    "id": "sql-7",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Count rows",
+    "code": "SELECT COUNT(*) FROM orders;"
+  },
+  {
+    "id": "sql-8",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "WHERE with AND",
+    "code": "SELECT * FROM products\nWHERE price > 100 AND stock > 0;"
+  },
+  {
+    "id": "sql-9",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "ORDER BY clause",
+    "code": "SELECT name, price FROM products\nORDER BY price DESC;"
+  },
+  {
+    "id": "sql-10",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "DISTINCT values",
+    "code": "SELECT DISTINCT category FROM products;"
+  },
+  {
+    "id": "sql-11",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "LIKE pattern matching",
+    "code": "SELECT * FROM users\nWHERE email LIKE \"%@gmail.com\";"
+  },
+  {
+    "id": "sql-12",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "IN operator",
+    "code": "SELECT * FROM orders\nWHERE status IN (\"pending\", \"processing\");"
+  },
+  {
+    "id": "sql-13",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "BETWEEN operator",
+    "code": "SELECT * FROM products\nWHERE price BETWEEN 50 AND 100;"
+  },
+  {
+    "id": "sql-14",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "INSERT single row",
+    "code": "INSERT INTO users (name, email)\nVALUES (\"John Doe\", \"john@example.com\");"
+  },
+  {
+    "id": "sql-15",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "UPDATE statement",
+    "code": "UPDATE users\nSET status = \"active\"\nWHERE id = 1;"
+  },
+  {
+    "id": "sql-16",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "DELETE statement",
+    "code": "DELETE FROM orders\nWHERE status = \"cancelled\";"
+  },
+  {
+    "id": "sql-17",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "IS NULL check",
+    "code": "SELECT * FROM users\nWHERE deleted_at IS NULL;"
+  },
+  {
+    "id": "sql-18",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "MAX aggregate",
+    "code": "SELECT MAX(price) as highest_price\nFROM products;"
+  },
+  {
+    "id": "sql-19",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "MIN aggregate",
+    "code": "SELECT MIN(created_at) as first_order\nFROM orders;"
+  },
+  {
+    "id": "sql-20",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "AVG aggregate",
+    "code": "SELECT AVG(price) as average_price\nFROM products;"
+  },
+  {
+    "id": "sql-21",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "SUM aggregate",
+    "code": "SELECT SUM(amount) as total_revenue\nFROM orders;"
+  },
+  {
+    "id": "sql-22",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "AS aliasing",
+    "code": "SELECT name AS product_name,\n       price AS cost\nFROM products;"
+  },
+  {
+    "id": "sql-23",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "WHERE with OR",
+    "code": "SELECT * FROM users\nWHERE role = \"admin\" OR role = \"moderator\";"
+  },
+  {
+    "id": "sql-24",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "NOT operator",
+    "code": "SELECT * FROM products\nWHERE NOT discontinued = true;"
+  },
+  {
+    "id": "sql-25",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "OFFSET pagination",
+    "code": "SELECT * FROM users\nLIMIT 10 OFFSET 20;"
+  },
+  {
+    "id": "sql-26",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Simple INNER JOIN",
+    "code": "SELECT * FROM orders o\nINNER JOIN users u ON o.user_id = u.id;"
+  },
+  {
+    "id": "sql-27",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "COUNT with GROUP BY",
+    "code": "SELECT category, COUNT(*) as count\nFROM products\nGROUP BY category;"
+  },
+  {
+    "id": "sql-28",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Date comparison",
+    "code": "SELECT * FROM orders\nWHERE created_at >= \"2024-01-01\";"
+  },
+  {
+    "id": "sql-29",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "Multiple columns ORDER BY",
+    "code": "SELECT * FROM products\nORDER BY category ASC, price DESC;"
+  },
+  {
+    "id": "sql-30",
+    "language": "sql",
+    "difficulty": "easy",
+    "description": "INSERT multiple rows",
+    "code": "INSERT INTO tags (name)\nVALUES (\"tech\"), (\"news\"), (\"sports\");"
+  },
+  {
+    "id": "sql-31",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "LEFT JOIN with filter",
+    "code": "SELECT u.name, COUNT(o.id) as order_count\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nGROUP BY u.id, u.name;"
+  },
+  {
+    "id": "sql-32",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "CASE WHEN statement",
+    "code": "SELECT name,\n       CASE\n         WHEN price < 50 THEN \"cheap\"\n         WHEN price < 100 THEN \"moderate\"\n         ELSE \"expensive\"\n       END as price_category\nFROM products;"
+  },
+  {
+    "id": "sql-33",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Subquery in SELECT",
+    "code": "SELECT name,\n       (SELECT COUNT(*) FROM orders WHERE user_id = u.id) as order_count\nFROM users u;"
+  },
+  {
+    "id": "sql-34",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "HAVING clause",
+    "code": "SELECT user_id, COUNT(*) as total\nFROM orders\nGROUP BY user_id\nHAVING total >= 5;"
+  },
+  {
+    "id": "sql-35",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "UNION query",
+    "code": "SELECT name FROM customers\nUNION\nSELECT name FROM suppliers;"
+  },
+  {
+    "id": "sql-36",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "EXISTS subquery",
+    "code": "SELECT * FROM users u\nWHERE EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.user_id = u.id\n);"
+  },
+  {
+    "id": "sql-37",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "NOT EXISTS subquery",
+    "code": "SELECT * FROM users u\nWHERE NOT EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.user_id = u.id\n);"
+  },
+  {
+    "id": "sql-38",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Self JOIN",
+    "code": "SELECT e1.name as employee, e2.name as manager\nFROM employees e1\nJOIN employees e2 ON e1.manager_id = e2.id;"
+  },
+  {
+    "id": "sql-39",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Multiple JOINs",
+    "code": "SELECT o.id, u.name, p.name as product\nFROM orders o\nJOIN users u ON o.user_id = u.id\nJOIN products p ON o.product_id = p.id;"
+  },
+  {
+    "id": "sql-40",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "String concatenation",
+    "code": "SELECT CONCAT(first_name, \" \", last_name) as full_name\nFROM users;"
+  },
+  {
+    "id": "sql-41",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Date functions",
+    "code": "SELECT DATE_FORMAT(created_at, \"%Y-%m-%d\") as date,\n       COUNT(*) as count\nFROM orders\nGROUP BY date;"
+  },
+  {
+    "id": "sql-42",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "COALESCE function",
+    "code": "SELECT name,\n       COALESCE(phone, email, \"no contact\") as contact\nFROM users;"
+  },
+  {
+    "id": "sql-43",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "NULLIF function",
+    "code": "SELECT NULLIF(discount, 0) as valid_discount\nFROM products;"
+  },
+  {
+    "id": "sql-44",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "ROUND function",
+    "code": "SELECT name, ROUND(price, 2) as rounded_price\nFROM products;"
+  },
+  {
+    "id": "sql-45",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "UPDATE with JOIN",
+    "code": "UPDATE orders o\nJOIN users u ON o.user_id = u.id\nSET o.status = \"priority\"\nWHERE u.tier = \"premium\";"
+  },
+  {
+    "id": "sql-46",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "DELETE with JOIN",
+    "code": "DELETE o FROM orders o\nJOIN users u ON o.user_id = u.id\nWHERE u.deleted_at IS NOT NULL;"
+  },
+  {
+    "id": "sql-47",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "INSERT SELECT",
+    "code": "INSERT INTO archive_orders\nSELECT * FROM orders\nWHERE created_at < \"2023-01-01\";"
+  },
+  {
+    "id": "sql-48",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "GROUP BY multiple columns",
+    "code": "SELECT category, status, COUNT(*) as count\nFROM products\nGROUP BY category, status;"
+  },
+  {
+    "id": "sql-49",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "UPPER and LOWER functions",
+    "code": "SELECT UPPER(name) as name_upper,\n       LOWER(email) as email_lower\nFROM users;"
+  },
+  {
+    "id": "sql-50",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "LENGTH function",
+    "code": "SELECT name, LENGTH(description) as desc_length\nFROM products\nWHERE LENGTH(description) > 100;"
+  },
+  {
+    "id": "sql-51",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "SUBSTRING function",
+    "code": "SELECT name, SUBSTRING(description, 1, 50) as preview\nFROM products;"
+  },
+  {
+    "id": "sql-52",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "IF function",
+    "code": "SELECT name,\n       IF(stock > 0, \"In Stock\", \"Out of Stock\") as availability\nFROM products;"
+  },
+  {
+    "id": "sql-53",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "Date difference",
+    "code": "SELECT name, DATEDIFF(NOW(), created_at) as days_old\nFROM users;"
+  },
+  {
+    "id": "sql-54",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "RIGHT JOIN",
+    "code": "SELECT u.name, o.id as order_id\nFROM users u\nRIGHT JOIN orders o ON u.id = o.user_id;"
+  },
+  {
+    "id": "sql-55",
+    "language": "sql",
+    "difficulty": "medium",
+    "description": "CREATE INDEX",
+    "code": "CREATE INDEX idx_user_email ON users(email);"
+  },
+  {
+    "id": "sql-56",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Window function ROW_NUMBER",
+    "code": "SELECT name, price,\n       ROW_NUMBER() OVER (PARTITION BY category ORDER BY price DESC) as rank\nFROM products;"
+  },
+  {
+    "id": "sql-57",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Window function RANK",
+    "code": "SELECT name, score,\n       RANK() OVER (ORDER BY score DESC) as ranking\nFROM players;"
+  },
+  {
+    "id": "sql-58",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Running total with SUM OVER",
+    "code": "SELECT date, amount,\n       SUM(amount) OVER (ORDER BY date) as running_total\nFROM daily_sales;"
+  },
+  {
+    "id": "sql-59",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "LAG function",
+    "code": "SELECT date, revenue,\n       LAG(revenue, 1) OVER (ORDER BY date) as prev_day_revenue\nFROM daily_revenue;"
+  },
+  {
+    "id": "sql-60",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "LEAD function",
+    "code": "SELECT date, price,\n       LEAD(price, 1) OVER (ORDER BY date) as next_price\nFROM stock_prices;"
+  },
+  {
+    "id": "sql-61",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Common Table Expression (CTE)",
+    "code": "WITH monthly_sales AS (\n  SELECT DATE_FORMAT(date, \"%Y-%m\") as month,\n         SUM(amount) as total\n  FROM sales\n  GROUP BY month\n)\nSELECT * FROM monthly_sales\nWHERE total > 10000;"
+  },
+  {
+    "id": "sql-62",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Recursive CTE",
+    "code": "WITH RECURSIVE category_tree AS (\n  SELECT id, name, parent_id, 1 as level\n  FROM categories\n  WHERE parent_id IS NULL\n  UNION ALL\n  SELECT c.id, c.name, c.parent_id, ct.level + 1\n  FROM categories c\n  JOIN category_tree ct ON c.parent_id = ct.id\n)\nSELECT * FROM category_tree;"
+  },
+  {
+    "id": "sql-63",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Multiple CTEs",
+    "code": "WITH active_users AS (\n  SELECT * FROM users WHERE status = \"active\"\n),\nuser_orders AS (\n  SELECT user_id, COUNT(*) as order_count\n  FROM orders\n  GROUP BY user_id\n)\nSELECT u.name, uo.order_count\nFROM active_users u\nJOIN user_orders uo ON u.id = uo.user_id;"
+  },
+  {
+    "id": "sql-64",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "PIVOT simulation",
+    "code": "SELECT user_id,\n       SUM(CASE WHEN status = \"pending\" THEN 1 ELSE 0 END) as pending,\n       SUM(CASE WHEN status = \"completed\" THEN 1 ELSE 0 END) as completed,\n       SUM(CASE WHEN status = \"cancelled\" THEN 1 ELSE 0 END) as cancelled\nFROM orders\nGROUP BY user_id;"
+  },
+  {
+    "id": "sql-65",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "NTILE for quartiles",
+    "code": "SELECT name, salary,\n       NTILE(4) OVER (ORDER BY salary) as quartile\nFROM employees;"
+  },
+  {
+    "id": "sql-66",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Cumulative percentage",
+    "code": "SELECT name, revenue,\n       SUM(revenue) OVER (ORDER BY revenue DESC) * 100.0 /\n       SUM(revenue) OVER () as cumulative_pct\nFROM products;"
+  },
+  {
+    "id": "sql-67",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Complex subquery with aggregation",
+    "code": "SELECT u.name, u.total_orders\nFROM (\n  SELECT user_id, COUNT(*) as total_orders\n  FROM orders\n  WHERE created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)\n  GROUP BY user_id\n  HAVING total_orders > 5\n) o\nJOIN users u ON o.user_id = u.id;"
+  },
+  {
+    "id": "sql-68",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "JSON extraction",
+    "code": "SELECT id,\n       JSON_EXTRACT(metadata, \"$.color\") as color,\n       JSON_EXTRACT(metadata, \"$.size\") as size\nFROM products;"
+  },
+  {
+    "id": "sql-69",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "FULL OUTER JOIN simulation",
+    "code": "SELECT * FROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nUNION\nSELECT * FROM users u\nRIGHT JOIN orders o ON u.id = o.user_id\nWHERE u.id IS NULL;"
+  },
+  {
+    "id": "sql-70",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Correlated subquery",
+    "code": "SELECT p1.*\nFROM products p1\nWHERE price > (\n  SELECT AVG(price)\n  FROM products p2\n  WHERE p2.category = p1.category\n);"
+  },
+  {
+    "id": "sql-71",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "CREATE VIEW",
+    "code": "CREATE VIEW active_user_stats AS\nSELECT u.id, u.name, COUNT(o.id) as order_count,\n       SUM(o.amount) as total_spent\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id\nWHERE u.status = \"active\"\nGROUP BY u.id, u.name;"
+  },
+  {
+    "id": "sql-72",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Stored procedure syntax",
+    "code": "DELIMITER //\nCREATE PROCEDURE GetUserOrders(IN userId INT)\nBEGIN\n  SELECT * FROM orders\n  WHERE user_id = userId\n  ORDER BY created_at DESC;\nEND //\nDELIMITER ;"
+  },
+  {
+    "id": "sql-73",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Transaction with COMMIT",
+    "code": "START TRANSACTION;\n\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\n\nCOMMIT;"
+  },
+  {
+    "id": "sql-74",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "ROLLBACK on error",
+    "code": "START TRANSACTION;\n\nUPDATE inventory SET quantity = quantity - 1 WHERE id = 1;\n\nIF (SELECT quantity FROM inventory WHERE id = 1) < 0 THEN\n  ROLLBACK;\nELSE\n  COMMIT;\nEND IF;"
+  },
+  {
+    "id": "sql-75",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Trigger creation",
+    "code": "CREATE TRIGGER update_timestamp\nBEFORE UPDATE ON users\nFOR EACH ROW\nBEGIN\n  SET NEW.updated_at = NOW();\nEND;"
+  },
+  {
+    "id": "sql-76",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Foreign key constraint",
+    "code": "CREATE TABLE orders (\n  id INT PRIMARY KEY AUTO_INCREMENT,\n  user_id INT NOT NULL,\n  amount DECIMAL(10,2),\n  FOREIGN KEY (user_id) REFERENCES users(id)\n    ON DELETE CASCADE\n    ON UPDATE CASCADE\n);"
+  },
+  {
+    "id": "sql-77",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Complex UNION ALL with ordering",
+    "code": "SELECT \"user\" as type, id, name, created_at FROM users\nUNION ALL\nSELECT \"product\" as type, id, name, created_at FROM products\nUNION ALL\nSELECT \"order\" as type, id, CONCAT(\"Order #\", id), created_at FROM orders\nORDER BY created_at DESC\nLIMIT 100;"
+  },
+  {
+    "id": "sql-78",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Dense rank for competitions",
+    "code": "SELECT name, score,\n       DENSE_RANK() OVER (ORDER BY score DESC) as rank\nFROM competition_results;"
+  },
+  {
+    "id": "sql-79",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Moving average calculation",
+    "code": "SELECT date, revenue,\n       AVG(revenue) OVER (\n         ORDER BY date\n         ROWS BETWEEN 6 PRECEDING AND CURRENT ROW\n       ) as moving_avg_7day\nFROM daily_revenue;"
+  },
+  {
+    "id": "sql-80",
+    "language": "sql",
+    "difficulty": "hard",
+    "description": "Percentile calculation",
+    "code": "SELECT name, salary,\n       PERCENT_RANK() OVER (ORDER BY salary) as percentile\nFROM employees\nWHERE percentile >= 0.9;"
+  },
+  {
+    "id": "jsx-6",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Simple div element",
+    "code": "const Container = () => <div className=\"container\">Content</div>;"
+  },
+  {
+    "id": "jsx-7",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Image component",
+    "code": "const Avatar = ({ src, alt }) => (\n  <img src={src} alt={alt} className=\"avatar\" />\n);"
+  },
+  {
+    "id": "jsx-8",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Link component",
+    "code": "const NavLink = ({ href, text }) => (\n  <a href={href} className=\"nav-link\">{text}</a>\n);"
+  },
+  {
+    "id": "jsx-9",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Heading with props",
+    "code": "const Title = ({ text }) => <h1 className=\"title\">{text}</h1>;"
+  },
+  {
+    "id": "jsx-10",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Paragraph component",
+    "code": "const Text = ({ children }) => (\n  <p className=\"text\">{children}</p>\n);"
+  },
+  {
+    "id": "jsx-11",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Input field",
+    "code": "const Input = ({ value, onChange }) => (\n  <input value={value} onChange={onChange} />\n);"
+  },
+  {
+    "id": "jsx-12",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Simple button with onClick",
+    "code": "const ClickButton = ({ onClick, label }) => (\n  <button onClick={onClick}>{label}</button>\n);"
+  },
+  {
+    "id": "jsx-13",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Conditional class name",
+    "code": "const Alert = ({ type, message }) => (\n  <div className={}>{message}</div>\n);"
+  },
+  {
+    "id": "jsx-14",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Fragment shorthand",
+    "code": "const Items = () => (\n  <>\n    <li>Item 1</li>\n    <li>Item 2</li>\n  </>\n);"
+  },
+  {
+    "id": "jsx-15",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Icon component",
+    "code": "const Icon = ({ name }) => (\n  <i className={} />\n);"
+  },
+  {
+    "id": "jsx-16",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Disabled button",
+    "code": "const Submit = ({ disabled }) => (\n  <button disabled={disabled}>Submit</button>\n);"
+  },
+  {
+    "id": "jsx-17",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Inline style prop",
+    "code": "const Box = ({ color }) => (\n  <div style={{ backgroundColor: color }}>Colored Box</div>\n);"
+  },
+  {
+    "id": "jsx-18",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Multiple children",
+    "code": "const Section = ({ title, children }) => (\n  <section>\n    <h2>{title}</h2>\n    <div>{children}</div>\n  </section>\n);"
+  },
+  {
+    "id": "jsx-19",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Label and input pair",
+    "code": "const Field = ({ label, name }) => (\n  <div>\n    <label htmlFor={name}>{label}</label>\n    <input id={name} name={name} />\n  </div>\n);"
+  },
+  {
+    "id": "jsx-20",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Checkbox input",
+    "code": "const Checkbox = ({ checked, onChange, label }) => (\n  <label>\n    <input type=\"checkbox\" checked={checked} onChange={onChange} />\n    {label}\n  </label>\n);"
+  },
+  {
+    "id": "jsx-21",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Select dropdown",
+    "code": "const Select = ({ value, onChange, options }) => (\n  <select value={value} onChange={onChange}>\n    {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}\n  </select>\n);"
+  },
+  {
+    "id": "jsx-22",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Textarea component",
+    "code": "const TextArea = ({ value, onChange }) => (\n  <textarea value={value} onChange={onChange} rows={4} />\n);"
+  },
+  {
+    "id": "jsx-23",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Badge component",
+    "code": "const Badge = ({ count }) => (\n  <span className=\"badge\">{count}</span>\n);"
+  },
+  {
+    "id": "jsx-24",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Grid container",
+    "code": "const Grid = ({ children }) => (\n  <div className=\"grid\">{children}</div>\n);"
+  },
+  {
+    "id": "jsx-25",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Span with text",
+    "code": "const Label = ({ text, color }) => (\n  <span style={{ color }}>{text}</span>\n);"
+  },
+  {
+    "id": "jsx-26",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Anchor with target",
+    "code": "const ExternalLink = ({ href, children }) => (\n  <a href={href} target=\"_blank\" rel=\"noopener noreferrer\">{children}</a>\n);"
+  },
+  {
+    "id": "jsx-27",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Table header",
+    "code": "const TableHeader = ({ columns }) => (\n  <thead>\n    <tr>\n      {columns.map(col => <th key={col}>{col}</th>)}\n    </tr>\n  </thead>\n);"
+  },
+  {
+    "id": "jsx-28",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Loading spinner",
+    "code": "const Spinner = () => <div className=\"spinner\" />;"
+  },
+  {
+    "id": "jsx-29",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Error message",
+    "code": "const ErrorMsg = ({ message }) => (\n  <div className=\"error\">{message}</div>\n);"
+  },
+  {
+    "id": "jsx-30",
+    "language": "jsx",
+    "difficulty": "easy",
+    "description": "Success message",
+    "code": "const Success = ({ text }) => (\n  <div className=\"success\">{text}</div>\n);"
+  },
+  {
+    "id": "jsx-31",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "useState hook",
+    "code": "const Counter = () => {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n};"
+  },
+  {
+    "id": "jsx-32",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Controlled input",
+    "code": "const NameInput = () => {\n  const [name, setName] = useState(\"\");\n  return (\n    <input\n      value={name}\n      onChange={(e) => setName(e.target.value)}\n      placeholder=\"Enter name\"\n    />\n  );\n};"
+  },
+  {
+    "id": "jsx-33",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "useEffect for data fetching",
+    "code": "const UserData = ({ userId }) => {\n  const [user, setUser] = useState(null);\n  \n  useEffect(() => {\n    fetch()\n      .then(r => r.json())\n      .then(setUser);\n  }, [userId]);\n  \n  return <div>{user?.name}</div>;\n};"
+  },
+  {
+    "id": "jsx-34",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Multiple state variables",
+    "code": "const Form = () => {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  \n  return (\n    <form>\n      <input value={email} onChange={(e) => setEmail(e.target.value)} />\n      <input type=\"password\" value={password} onChange={(e) => setPassword(e.target.value)} />\n    </form>\n  );\n};"
+  },
+  {
+    "id": "jsx-35",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Toggle visibility",
+    "code": "const Collapsible = ({ title, children }) => {\n  const [isOpen, setIsOpen] = useState(false);\n  \n  return (\n    <div>\n      <button onClick={() => setIsOpen(!isOpen)}>{title}</button>\n      {isOpen && <div>{children}</div>}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-36",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Array state manipulation",
+    "code": "const TodoList = () => {\n  const [todos, setTodos] = useState([]);\n  \n  const addTodo = (text) => {\n    setTodos([...todos, { id: Date.now(), text }]);\n  };\n  \n  return (\n    <ul>\n      {todos.map(todo => <li key={todo.id}>{todo.text}</li>)}\n    </ul>\n  );\n};"
+  },
+  {
+    "id": "jsx-37",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Event handler with parameter",
+    "code": "const ItemList = ({ items, onDelete }) => (\n  <ul>\n    {items.map(item => (\n      <li key={item.id}>\n        {item.name}\n        <button onClick={() => onDelete(item.id)}>Delete</button>\n      </li>\n    ))}\n  </ul>\n);"
+  },
+  {
+    "id": "jsx-38",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Form submission",
+    "code": "const ContactForm = ({ onSubmit }) => {\n  const handleSubmit = (e) => {\n    e.preventDefault();\n    const formData = new FormData(e.target);\n    onSubmit(Object.fromEntries(formData));\n  };\n  \n  return <form onSubmit={handleSubmit}>...</form>;\n};"
+  },
+  {
+    "id": "jsx-39",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Conditional rendering with ternary",
+    "code": "const UserGreeting = ({ isLoggedIn, name }) => (\n  <div>\n    {isLoggedIn ? (\n      <h1>Welcome back, {name}!</h1>\n    ) : (\n      <h1>Please sign in</h1>\n    )}\n  </div>\n);"
+  },
+  {
+    "id": "jsx-40",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Loading state pattern",
+    "code": "const DataView = ({ data, isLoading, error }) => {\n  if (isLoading) return <Spinner />;\n  if (error) return <Error message={error} />;\n  return <div>{data}</div>;\n};"
+  },
+  {
+    "id": "jsx-41",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "useRef for DOM access",
+    "code": "const FocusInput = () => {\n  const inputRef = useRef(null);\n  \n  useEffect(() => {\n    inputRef.current?.focus();\n  }, []);\n  \n  return <input ref={inputRef} />;\n};"
+  },
+  {
+    "id": "jsx-42",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Pagination component",
+    "code": "const Pagination = ({ page, totalPages, onPageChange }) => (\n  <div>\n    <button onClick={() => onPageChange(page - 1)} disabled={page === 1}>Prev</button>\n    <span>{page} / {totalPages}</span>\n    <button onClick={() => onPageChange(page + 1)} disabled={page === totalPages}>Next</button>\n  </div>\n);"
+  },
+  {
+    "id": "jsx-43",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Tabs component",
+    "code": "const Tabs = ({ tabs }) => {\n  const [activeTab, setActiveTab] = useState(0);\n  \n  return (\n    <div>\n      <div className=\"tab-headers\">\n        {tabs.map((tab, i) => (\n          <button key={i} onClick={() => setActiveTab(i)}>{tab.title}</button>\n        ))}\n      </div>\n      <div className=\"tab-content\">{tabs[activeTab].content}</div>\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-44",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Modal component",
+    "code": "const Modal = ({ isOpen, onClose, children }) => {\n  if (!isOpen) return null;\n  \n  return (\n    <div className=\"modal-overlay\" onClick={onClose}>\n      <div className=\"modal-content\" onClick={(e) => e.stopPropagation()}>\n        {children}\n        <button onClick={onClose}>Close</button>\n      </div>\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-45",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Debounced search input",
+    "code": "const SearchInput = ({ onSearch }) => {\n  const [query, setQuery] = useState(\"\");\n  \n  useEffect(() => {\n    const timer = setTimeout(() => onSearch(query), 500);\n    return () => clearTimeout(timer);\n  }, [query, onSearch]);\n  \n  return <input value={query} onChange={(e) => setQuery(e.target.value)} />;\n};"
+  },
+  {
+    "id": "jsx-46",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Dropdown menu",
+    "code": "const Dropdown = ({ items, onSelect }) => {\n  const [isOpen, setIsOpen] = useState(false);\n  \n  return (\n    <div className=\"dropdown\">\n      <button onClick={() => setIsOpen(!isOpen)}>Menu</button>\n      {isOpen && (\n        <ul>\n          {items.map(item => (\n            <li key={item.id} onClick={() => { onSelect(item); setIsOpen(false); }}>\n              {item.label}\n            </li>\n          ))}\n        </ul>\n      )}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-47",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Accordion component",
+    "code": "const Accordion = ({ items }) => {\n  const [openIndex, setOpenIndex] = useState(null);\n  \n  return (\n    <div>\n      {items.map((item, i) => (\n        <div key={i}>\n          <button onClick={() => setOpenIndex(openIndex === i ? null : i)}>\n            {item.title}\n          </button>\n          {openIndex === i && <div>{item.content}</div>}\n        </div>\n      ))}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-48",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Star rating component",
+    "code": "const StarRating = ({ rating, onRate }) => (\n  <div>\n    {[1, 2, 3, 4, 5].map(star => (\n      <span\n        key={star}\n        onClick={() => onRate(star)}\n        className={star <= rating ? \"star-filled\" : \"star-empty\"}\n      >\n        ★\n      </span>\n    ))}\n  </div>\n);"
+  },
+  {
+    "id": "jsx-49",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Tooltip component",
+    "code": "const Tooltip = ({ text, children }) => {\n  const [show, setShow] = useState(false);\n  \n  return (\n    <div\n      onMouseEnter={() => setShow(true)}\n      onMouseLeave={() => setShow(false)}\n      className=\"tooltip-container\"\n    >\n      {children}\n      {show && <div className=\"tooltip\">{text}</div>}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-50",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Progress bar",
+    "code": "const ProgressBar = ({ current, total }) => {\n  const percentage = (current / total) * 100;\n  \n  return (\n    <div className=\"progress-bar\">\n      <div className=\"progress-fill\" style={{ width:  }} />\n      <span>{percentage.toFixed(0)}%</span>\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-51",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Infinite scroll trigger",
+    "code": "const InfiniteScroll = ({ onLoadMore, hasMore }) => {\n  const observerRef = useRef();\n  \n  useEffect(() => {\n    const observer = new IntersectionObserver(([entry]) => {\n      if (entry.isIntersecting && hasMore) onLoadMore();\n    });\n    if (observerRef.current) observer.observe(observerRef.current);\n    return () => observer.disconnect();\n  }, [hasMore, onLoadMore]);\n  \n  return <div ref={observerRef} />;\n};"
+  },
+  {
+    "id": "jsx-52",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Copy to clipboard button",
+    "code": "const CopyButton = ({ text }) => {\n  const [copied, setCopied] = useState(false);\n  \n  const handleCopy = () => {\n    navigator.clipboard.writeText(text);\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);\n  };\n  \n  return <button onClick={handleCopy}>{copied ? \"Copied!\" : \"Copy\"}</button>;\n};"
+  },
+  {
+    "id": "jsx-53",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Timer component",
+    "code": "const Timer = ({ seconds }) => {\n  const [time, setTime] = useState(seconds);\n  \n  useEffect(() => {\n    if (time > 0) {\n      const timer = setTimeout(() => setTime(time - 1), 1000);\n      return () => clearTimeout(timer);\n    }\n  }, [time]);\n  \n  return <div>{time}s</div>;\n};"
+  },
+  {
+    "id": "jsx-54",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Image with fallback",
+    "code": "const ImageWithFallback = ({ src, fallback, alt }) => {\n  const [imgSrc, setImgSrc] = useState(src);\n  \n  return (\n    <img\n      src={imgSrc}\n      alt={alt}\n      onError={() => setImgSrc(fallback)}\n    />\n  );\n};"
+  },
+  {
+    "id": "jsx-55",
+    "language": "jsx",
+    "difficulty": "medium",
+    "description": "Toggle switch",
+    "code": "const Toggle = ({ checked, onChange, label }) => (\n  <label className=\"toggle\">\n    <input type=\"checkbox\" checked={checked} onChange={onChange} />\n    <span className=\"slider\" />\n    {label}\n  </label>\n);"
+  },
+  {
+    "id": "jsx-56",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "useContext for theme",
+    "code": "const ThemeContext = createContext();\n\nconst ThemeProvider = ({ children }) => {\n  const [theme, setTheme] = useState(\"light\");\n  \n  return (\n    <ThemeContext.Provider value={{ theme, setTheme }}>\n      {children}\n    </ThemeContext.Provider>\n  );\n};\n\nconst ThemedButton = () => {\n  const { theme } = useContext(ThemeContext);\n  return <button className={}>Button</button>;\n};"
+  },
+  {
+    "id": "jsx-57",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "useReducer for complex state",
+    "code": "const reducer = (state, action) => {\n  switch (action.type) {\n    case \"ADD_ITEM\":\n      return { ...state, items: [...state.items, action.payload] };\n    case \"REMOVE_ITEM\":\n      return { ...state, items: state.items.filter(i => i.id !== action.payload) };\n    default:\n      return state;\n  }\n};\n\nconst ItemManager = () => {\n  const [state, dispatch] = useReducer(reducer, { items: [] });\n  return <div>{state.items.length} items</div>;\n};"
+  },
+  {
+    "id": "jsx-58",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Custom useFetch hook",
+    "code": "const useFetch = (url) => {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n  \n  useEffect(() => {\n    fetch(url)\n      .then(r => r.json())\n      .then(setData)\n      .catch(setError)\n      .finally(() => setLoading(false));\n  }, [url]);\n  \n  return { data, loading, error };\n};"
+  },
+  {
+    "id": "jsx-59",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Custom useLocalStorage hook",
+    "code": "const useLocalStorage = (key, initialValue) => {\n  const [value, setValue] = useState(() => {\n    const stored = localStorage.getItem(key);\n    return stored ? JSON.parse(stored) : initialValue;\n  });\n  \n  useEffect(() => {\n    localStorage.setItem(key, JSON.stringify(value));\n  }, [key, value]);\n  \n  return [value, setValue];\n};"
+  },
+  {
+    "id": "jsx-60",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Portal for modals",
+    "code": "import { createPortal } from \"react-dom\";\n\nconst Portal = ({ children }) => {\n  const [mounted, setMounted] = useState(false);\n  \n  useEffect(() => {\n    setMounted(true);\n    return () => setMounted(false);\n  }, []);\n  \n  return mounted\n    ? createPortal(children, document.getElementById(\"portal-root\"))\n    : null;\n};"
+  },
+  {
+    "id": "jsx-61",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Virtualized list",
+    "code": "const VirtualList = ({ items, itemHeight, containerHeight }) => {\n  const [scrollTop, setScrollTop] = useState(0);\n  \n  const startIndex = Math.floor(scrollTop / itemHeight);\n  const endIndex = Math.ceil((scrollTop + containerHeight) / itemHeight);\n  const visibleItems = items.slice(startIndex, endIndex);\n  \n  return (\n    <div\n      style={{ height: containerHeight, overflow: \"auto\" }}\n      onScroll={(e) => setScrollTop(e.target.scrollTop)}\n    >\n      <div style={{ height: items.length * itemHeight, position: \"relative\" }}>\n        {visibleItems.map((item, i) => (\n          <div key={startIndex + i} style={{ position: \"absolute\", top: (startIndex + i) * itemHeight }}>\n            {item}\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-62",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Drag and drop",
+    "code": "const DraggableItem = ({ item, onDrop }) => {\n  const [isDragging, setIsDragging] = useState(false);\n  \n  const handleDragStart = (e) => {\n    e.dataTransfer.setData(\"item\", JSON.stringify(item));\n    setIsDragging(true);\n  };\n  \n  const handleDrop = (e) => {\n    e.preventDefault();\n    const droppedItem = JSON.parse(e.dataTransfer.getData(\"item\"));\n    onDrop(droppedItem);\n  };\n  \n  return (\n    <div\n      draggable\n      onDragStart={handleDragStart}\n      onDragEnd={() => setIsDragging(false)}\n      onDrop={handleDrop}\n      onDragOver={(e) => e.preventDefault()}\n    >\n      {item.name}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-63",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Compound component pattern",
+    "code": "const Select = ({ children, value, onChange }) => {\n  return (\n    <select value={value} onChange={onChange}>\n      {children}\n    </select>\n  );\n};\n\nSelect.Option = ({ value, children }) => (\n  <option value={value}>{children}</option>\n);\n\nconst MySelect = () => (\n  <Select value=\"1\" onChange={console.log}>\n    <Select.Option value=\"1\">One</Select.Option>\n    <Select.Option value=\"2\">Two</Select.Option>\n  </Select>\n);"
+  },
+  {
+    "id": "jsx-64",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Render props pattern",
+    "code": "const DataLoader = ({ url, render }) => {\n  const { data, loading, error } = useFetch(url);\n  \n  return render({ data, loading, error });\n};\n\nconst App = () => (\n  <DataLoader\n    url=\"/api/users\"\n    render={({ data, loading, error }) => (\n      loading ? <Spinner /> : <UserList users={data} />\n    )}\n  />\n);"
+  },
+  {
+    "id": "jsx-65",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "HOC for authentication",
+    "code": "const withAuth = (Component) => {\n  return (props) => {\n    const { user, loading } = useAuth();\n    \n    if (loading) return <Spinner />;\n    if (!user) return <Redirect to=\"/login\" />;\n    \n    return <Component {...props} user={user} />;\n  };\n};\n\nconst ProtectedPage = withAuth(({ user }) => (\n  <div>Welcome, {user.name}</div>\n));"
+  },
+  {
+    "id": "jsx-66",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Memoized component",
+    "code": "const ExpensiveComponent = memo(({ data, onUpdate }) => {\n  const processedData = useMemo(() => {\n    return data.map(item => item.value * 2);\n  }, [data]);\n  \n  const handleClick = useCallback(() => {\n    onUpdate(processedData);\n  }, [processedData, onUpdate]);\n  \n  return <div onClick={handleClick}>{processedData.length}</div>;\n});"
+  },
+  {
+    "id": "jsx-67",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Error boundary",
+    "code": "class ErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n  \n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n  \n  componentDidCatch(error, errorInfo) {\n    console.error(\"Error:\", error, errorInfo);\n  }\n  \n  render() {\n    if (this.state.hasError) {\n      return <h1>Something went wrong.</h1>;\n    }\n    return this.props.children;\n  }\n}"
+  },
+  {
+    "id": "jsx-68",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Intersection observer hook",
+    "code": "const useInView = (options) => {\n  const [isInView, setIsInView] = useState(false);\n  const ref = useRef(null);\n  \n  useEffect(() => {\n    const observer = new IntersectionObserver(([entry]) => {\n      setIsInView(entry.isIntersecting);\n    }, options);\n    \n    if (ref.current) observer.observe(ref.current);\n    return () => observer.disconnect();\n  }, [options]);\n  \n  return [ref, isInView];\n};"
+  },
+  {
+    "id": "jsx-69",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Form with validation",
+    "code": "const useForm = (initialValues, validate) => {\n  const [values, setValues] = useState(initialValues);\n  const [errors, setErrors] = useState({});\n  \n  const handleChange = (e) => {\n    setValues({ ...values, [e.target.name]: e.target.value });\n  };\n  \n  const handleSubmit = (onSubmit) => (e) => {\n    e.preventDefault();\n    const validationErrors = validate(values);\n    setErrors(validationErrors);\n    if (Object.keys(validationErrors).length === 0) {\n      onSubmit(values);\n    }\n  };\n  \n  return { values, errors, handleChange, handleSubmit };\n};"
+  },
+  {
+    "id": "jsx-70",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Multi-step form",
+    "code": "const MultiStepForm = ({ steps }) => {\n  const [currentStep, setCurrentStep] = useState(0);\n  const [formData, setFormData] = useState({});\n  \n  const next = (data) => {\n    setFormData({ ...formData, ...data });\n    setCurrentStep(currentStep + 1);\n  };\n  \n  const prev = () => setCurrentStep(currentStep - 1);\n  \n  const CurrentStepComponent = steps[currentStep];\n  \n  return (\n    <div>\n      <CurrentStepComponent onNext={next} onPrev={prev} data={formData} />\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-71",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "WebSocket hook",
+    "code": "const useWebSocket = (url) => {\n  const [data, setData] = useState(null);\n  const ws = useRef(null);\n  \n  useEffect(() => {\n    ws.current = new WebSocket(url);\n    ws.current.onmessage = (event) => {\n      setData(JSON.parse(event.data));\n    };\n    return () => ws.current?.close();\n  }, [url]);\n  \n  const send = (message) => {\n    ws.current?.send(JSON.stringify(message));\n  };\n  \n  return { data, send };\n};"
+  },
+  {
+    "id": "jsx-72",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Lazy loaded component",
+    "code": "const LazyComponent = lazy(() => import(\"./HeavyComponent\"));\n\nconst App = () => (\n  <Suspense fallback={<Spinner />}>\n    <LazyComponent />\n  </Suspense>\n);"
+  },
+  {
+    "id": "jsx-73",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Dynamic import with retry",
+    "code": "const loadComponent = (importFunc, retries = 3) => {\n  return new Promise((resolve, reject) => {\n    importFunc()\n      .then(resolve)\n      .catch((error) => {\n        if (retries > 0) {\n          setTimeout(() => {\n            loadComponent(importFunc, retries - 1).then(resolve, reject);\n          }, 1000);\n        } else {\n          reject(error);\n        }\n      });\n  });\n};\n\nconst LazyComp = lazy(() => loadComponent(() => import(\"./Component\")));"
+  },
+  {
+    "id": "jsx-74",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Custom event emitter hook",
+    "code": "const useEventEmitter = () => {\n  const listeners = useRef({});\n  \n  const on = useCallback((event, callback) => {\n    if (!listeners.current[event]) listeners.current[event] = [];\n    listeners.current[event].push(callback);\n  }, []);\n  \n  const emit = useCallback((event, data) => {\n    listeners.current[event]?.forEach(cb => cb(data));\n  }, []);\n  \n  return { on, emit };\n};"
+  },
+  {
+    "id": "jsx-75",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Responsive component",
+    "code": "const useMediaQuery = (query) => {\n  const [matches, setMatches] = useState(false);\n  \n  useEffect(() => {\n    const media = window.matchMedia(query);\n    setMatches(media.matches);\n    \n    const listener = (e) => setMatches(e.matches);\n    media.addEventListener(\"change\", listener);\n    return () => media.removeEventListener(\"change\", listener);\n  }, [query]);\n  \n  return matches;\n};\n\nconst ResponsiveNav = () => {\n  const isMobile = useMediaQuery(\"(max-width: 768px)\");\n  return isMobile ? <MobileNav /> : <DesktopNav />;\n};"
+  },
+  {
+    "id": "jsx-76",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Optimistic UI update",
+    "code": "const useOptimistic = (asyncFn) => {\n  const [data, setData] = useState(null);\n  const [error, setError] = useState(null);\n  \n  const execute = async (optimisticData) => {\n    const previousData = data;\n    setData(optimisticData);\n    \n    try {\n      const result = await asyncFn();\n      setData(result);\n    } catch (err) {\n      setData(previousData);\n      setError(err);\n    }\n  };\n  \n  return { data, error, execute };\n};"
+  },
+  {
+    "id": "jsx-77",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Animation with useTransition",
+    "code": "const AnimatedList = ({ items }) => {\n  const [isPending, startTransition] = useTransition();\n  const [filteredItems, setFilteredItems] = useState(items);\n  \n  const filterItems = (query) => {\n    startTransition(() => {\n      setFilteredItems(items.filter(i => i.includes(query)));\n    });\n  };\n  \n  return (\n    <div>\n      {isPending && <Spinner />}\n      {filteredItems.map(item => <div key={item}>{item}</div>)}\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-78",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Controlled vs Uncontrolled",
+    "code": "const DualForm = () => {\n  const [controlled, setControlled] = useState(\"\");\n  const uncontrolledRef = useRef();\n  \n  const handleSubmit = (e) => {\n    e.preventDefault();\n    console.log(\"Controlled:\", controlled);\n    console.log(\"Uncontrolled:\", uncontrolledRef.current.value);\n  };\n  \n  return (\n    <form onSubmit={handleSubmit}>\n      <input value={controlled} onChange={(e) => setControlled(e.target.value)} />\n      <input ref={uncontrolledRef} defaultValue=\"\" />\n    </form>\n  );\n};"
+  },
+  {
+    "id": "jsx-79",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "Concurrent rendering",
+    "code": "const App = () => {\n  const [query, setQuery] = useState(\"\");\n  const deferredQuery = useDeferredValue(query);\n  \n  const results = useMemo(() => {\n    return expensiveFilter(data, deferredQuery);\n  }, [deferredQuery]);\n  \n  return (\n    <div>\n      <input value={query} onChange={(e) => setQuery(e.target.value)} />\n      <Results data={results} />\n    </div>\n  );\n};"
+  },
+  {
+    "id": "jsx-80",
+    "language": "jsx",
+    "difficulty": "hard",
+    "description": "State machine with useReducer",
+    "code": "const machine = {\n  idle: { FETCH: \"loading\" },\n  loading: { SUCCESS: \"success\", ERROR: \"error\" },\n  success: { FETCH: \"loading\" },\n  error: { FETCH: \"loading\" }\n};\n\nconst reducer = (state, action) => {\n  return machine[state][action] || state;\n};\n\nconst AsyncComponent = () => {\n  const [state, dispatch] = useReducer(reducer, \"idle\");\n  return <div>Current state: {state}</div>;\n};"
   }
 ]
