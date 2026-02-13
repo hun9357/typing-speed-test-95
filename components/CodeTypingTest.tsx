@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Timer from "./Timer";
 import Results from "./Results";
+import { saveTestRecord } from "@/lib/test-recorder";
 
 interface CodeSnippet {
   id: string;
@@ -84,6 +85,18 @@ export default function CodeTypingTest({ snippet, onBack }: CodeTypingTestProps)
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
+
+    // Save test record
+    const finalMetrics = calculateMetrics();
+    saveTestRecord({
+      mode: 'code',
+      subMode: snippet.language,
+      wpm: Math.round(finalMetrics.wpm),
+      accuracy: finalMetrics.accuracy,
+      errors: finalMetrics.errors,
+      charsTyped: userInput.length,
+      duration: 60 - timeLeft,
+    });
   };
 
   // Reset test
@@ -211,7 +224,12 @@ export default function CodeTypingTest({ snippet, onBack }: CodeTypingTestProps)
         >
           ← Back to Language Selection
         </button>
-        <Results {...metrics} onReset={resetTest} />
+        <Results
+          {...metrics}
+          onReset={resetTest}
+          charsTyped={userInput.length}
+          duration={60 - timeLeft}
+        />
       </div>
     );
   }

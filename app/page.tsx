@@ -3,10 +3,17 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import StreakDisplay from "@/components/StreakDisplay";
+import ProfileSetup from "@/components/ProfileSetup";
+import DailyQuestPanel from "@/components/DailyQuestPanel";
+import Avatar from "@/components/Avatar";
+import { useProfile } from "@/hooks/useProfile";
+import { useTestHistory } from "@/hooks/useTestHistory";
 
 export default function Home() {
   const [currentStreak, setCurrentStreak] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const { profile, isNewUser, createProfile, isLoading: profileLoading } = useProfile();
+  const { statistics } = useTestHistory();
 
   useEffect(() => {
     // Load streak from localStorage
@@ -23,8 +30,47 @@ export default function Home() {
     }
   }, []);
 
+  // Handle profile setup
+  const handleProfileComplete = (nickname: string) => {
+    createProfile(nickname);
+  };
+
+  const handleSkip = () => {
+    createProfile('Anonymous');
+  };
+
+  // Calculate level
+  const level = profile ? Math.floor(statistics.totalTests / 10) + 1 : 1;
+
   return (
     <main className="min-h-screen">
+      {/* Profile Setup Modal */}
+      {!profileLoading && isNewUser && (
+        <ProfileSetup onComplete={handleProfileComplete} onSkip={handleSkip} />
+      )}
+
+      {/* Profile Mini Badge */}
+      {!profileLoading && profile && (
+        <div className="fixed top-4 right-4 z-40">
+          <Link
+            href="/profile"
+            className="flex items-center gap-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all px-4 py-2 border border-gray-200 hover:border-primary"
+          >
+            <Avatar
+              initial={profile.avatar.initial}
+              bgColor={profile.avatar.bgColor}
+              frameId={profile.avatar.frameId}
+              patternId={profile.avatar.patternId}
+              size="sm"
+            />
+            <div className="hidden sm:block text-left">
+              <div className="font-semibold text-gray-900 text-sm">{profile.nickname}</div>
+              <div className="text-xs text-gray-500">Level {level}</div>
+            </div>
+          </Link>
+        </div>
+      )}
+
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
         <div className="text-center">
@@ -64,6 +110,13 @@ export default function Home() {
             >
               🏢 Real-World Simulation
             </Link>
+
+            <Link
+              href="/battle"
+              className="inline-block bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl hover:shadow-red-500/20 transform hover:scale-105 animate-pulse hover:animate-none"
+            >
+              &#9876;&#65039; Battle Mode
+            </Link>
           </div>
 
           {!isLoading && currentStreak > 0 && (
@@ -72,6 +125,13 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {/* Daily Quest Panel */}
+        {!profileLoading && profile && (
+          <div className="mt-12">
+            <DailyQuestPanel />
+          </div>
+        )}
 
         {/* Feature Highlights */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -113,8 +173,27 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Battle Mode */}
+          <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl shadow-xl p-8 border-2 border-red-200">
+            <div className="text-center">
+              <div className="text-4xl mb-4">&#9876;&#65039;</div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                1v1 Battle Mode
+              </h2>
+              <p className="text-gray-700 mb-6">
+                Challenge a random opponent to a real-time 60-second typing battle. Compete head-to-head and prove your speed!
+              </p>
+              <Link
+                href="/battle"
+                className="inline-block bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Start Battle
+              </Link>
+            </div>
+          </div>
+
           {/* Real-World Simulation */}
-          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-xl p-8 border-2 border-emerald-200 md:col-span-2">
+          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-xl p-8 border-2 border-emerald-200">
             <div className="text-center">
               <div className="text-4xl mb-4">🏢</div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">

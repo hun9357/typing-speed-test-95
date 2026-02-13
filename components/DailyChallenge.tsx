@@ -5,6 +5,16 @@ import confetti from "canvas-confetti";
 import Timer from "./Timer";
 import StreakDisplay from "./StreakDisplay";
 import { useStreak } from "@/hooks/useStreak";
+import { saveTestRecord, getStatistics } from "@/lib/test-recorder";
+import { useXP } from "@/hooks/useXP";
+import { useAchievements } from "@/hooks/useAchievements";
+import { useDailyQuests } from "@/hooks/useDailyQuests";
+import { calculateTestXP } from "@/lib/xp-system";
+import XPGainDisplay from "./XPGainDisplay";
+import AchievementUnlockModal from "./AchievementUnlockModal";
+import LevelUpModal from "./LevelUpModal";
+import { QuestCompleteToastContainer } from "./QuestCompleteToast";
+import ShareResultCard from "./ShareResultCard";
 
 interface DailyChallengeProps {
   passage: string;
@@ -21,6 +31,14 @@ export default function DailyChallenge({ passage, onComplete }: DailyChallengePr
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const { getTodayProgress, recordCompletion, streakData } = useStreak();
+  const [showShare, setShowShare] = useState(false);
+
+  // XP and achievement hooks
+  const xpHook = useXP();
+  const achievementsHook = useAchievements();
+  const questsHook = useDailyQuests();
+  const [xpReward, setXpReward] = useState<ReturnType<typeof calculateTestXP> | null>(null);
+  const [currentAchievement, setCurrentAchievement] = useState<number>(0);
 
   const todayProgress = getTodayProgress();
   const alreadyCompleted = todayProgress?.completed || false;
@@ -85,8 +103,41 @@ export default function DailyChallenge({ passage, onComplete }: DailyChallengePr
     // Calculate final metrics
     const finalMetrics = calculateMetrics();
 
+    // Get previous best WPM before saving
+    const stats = getStatistics();
+    const previousBestWpm = stats.bestWpm;
+
+    // Save test record
+    const testRecord = saveTestRecord({
+      mode: 'daily',
+      wpm: Math.round(finalMetrics.wpm),
+      accuracy: finalMetrics.accuracy,
+      errors: finalMetrics.errors,
+      charsTyped: userInput.length,
+      duration: 60 - timeLeft,
+    });
+
     // Record completion
     recordCompletion(Math.round(finalMetrics.wpm), finalMetrics.accuracy);
+
+    // Update quest progress
+    questsHook.updateProgress(testRecord, previousBestWpm);
+
+    // Calculate XP with Daily 2x bonus
+    const reward = calculateTestXP(
+      Math.round(finalMetrics.wpm),
+      finalMetrics.accuracy,
+      'daily',
+      streakData.currentStreak
+    );
+    setXpReward(reward);
+
+    // Add XP
+    xpHook.addXP(reward.totalXP, 'Daily challenge completion');
+
+    // Check for new achievements
+    achievementsHook.checkAndUpdate();
+
     onComplete(Math.round(finalMetrics.wpm), finalMetrics.accuracy);
 
     // Trigger confetti
@@ -222,10 +273,59 @@ export default function DailyChallenge({ passage, onComplete }: DailyChallengePr
     );
   }
 
+  // Handle achievement modal queue
+  const handleDismissAchievement = () => {
+    if (achievementsHook.newlyUnlocked[currentAchievement]) {
+      achievementsHook.dismissNewAchievement(
+        achievementsHook.newlyUnlocked[currentAchievement].id
+      );
+    }
+    setCurrentAchievement(prev => prev + 1);
+  };
+
+  const showingAchievement = currentAchievement < achievementsHook.newlyUnlocked.length;
+  const currentAchievementDef = showingAchievement
+    ? achievementsHook.newlyUnlocked[currentAchievement]
+    : null;
+
   // Finished state
   if (testState === "finished") {
     return (
       <div className="max-w-4xl mx-auto">
+        {/* Quest Complete Toasts */}
+        <QuestCompleteToastContainer
+          quests={questsHook.newlyCompleted}
+          onDismiss={questsHook.dismissCompleted}
+        />
+
+        {/* Share Result Card */}
+        {showShare && (
+          <ShareResultCard
+            wpm={Math.round(metrics.wpm)}
+            accuracy={metrics.accuracy}
+            onClose={() => setShowShare(false)}
+          />
+        )}
+
+        {/* Achievement Unlock Modal */}
+        {currentAchievementDef && (
+          <AchievementUnlockModal
+            achievement={currentAchievementDef}
+            onClose={handleDismissAchievement}
+          />
+        )}
+
+        {/* Level Up Modal */}
+        {xpHook.leveledUp && !showingAchievement && (
+          <LevelUpModal
+            oldLevel={xpHook.previousLevel}
+            newLevel={xpHook.level}
+            totalXP={xpHook.totalXP}
+            nextLevelXP={xpHook.nextLevelXP}
+            onClose={xpHook.dismissLevelUp}
+          />
+        )}
+
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Challenge Complete! 🎉</h2>
           <StreakDisplay streak={streakData.currentStreak} size="large" />
@@ -246,7 +346,21 @@ export default function DailyChallenge({ passage, onComplete }: DailyChallengePr
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg p-8 text-center border-2 border-orange-200">
+        {/* XP Gain Display */}
+        {xpReward && (
+          <div className="mb-8">
+            <XPGainDisplay
+              reward={xpReward}
+              level={xpHook.level}
+              currentLevelXP={xpHook.currentLevelXP}
+              nextLevelXP={xpHook.nextLevelXP}
+              progress={xpHook.progress}
+              totalXP={xpHook.totalXP}
+            />
+          </div>
+        )}
+
+        <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg p-8 text-center border-2 border-orange-200 mb-6">
           <div className="text-5xl mb-4">🔥</div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
             See you tomorrow!
@@ -254,6 +368,16 @@ export default function DailyChallenge({ passage, onComplete }: DailyChallengePr
           <p className="text-gray-700">
             Come back tomorrow for a new challenge and keep your streak alive!
           </p>
+        </div>
+
+        {/* Share Button */}
+        <div className="text-center">
+          <button
+            onClick={() => setShowShare(true)}
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl"
+          >
+            📤 Share Result
+          </button>
         </div>
       </div>
     );

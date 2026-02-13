@@ -149,7 +149,14 @@ export default function TypingTest({ passage }: TypingTestProps) {
   }
 
   if (testState === "finished") {
-    return <Results {...metrics} onReset={resetTest} />;
+    return (
+      <Results
+        {...metrics}
+        onReset={resetTest}
+        charsTyped={userInput.length}
+        duration={60 - timeLeft}
+      />
+    );
   }
 
   return (

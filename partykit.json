@@ -1,0 +1,10 @@
+{
+  "$schema": "https://www.partykit.io/schema.json",
+  "name": "typing-battle",
+  "main": "party/battle.ts",
+  "parties": {
+    "matchmaker": "party/matchmaker.ts",
+    "battle": "party/battle.ts"
+  },
+  "compatibilityDate": "2024-09-01"
+}

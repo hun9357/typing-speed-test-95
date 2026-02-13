@@ -241,6 +241,8 @@ export default function SimulationTest({
         category={scenario.category}
         onTryAgain={onTryAgain}
         onChangeCategory={onChangeCategory}
+        charsTyped={userInput.length}
+        duration={60 - timeLeft}
       />
     );
   }

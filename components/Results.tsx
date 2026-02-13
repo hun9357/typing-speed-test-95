@@ -4,18 +4,77 @@ import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 import CertificateGenerator from "./CertificateGenerator";
 import { qualifiesForCertificate } from "@/lib/certificate";
+import { saveTestRecord, getStatistics } from "@/lib/test-recorder";
+import { useXP } from "@/hooks/useXP";
+import { useAchievements } from "@/hooks/useAchievements";
+import { useStreak } from "@/hooks/useStreak";
+import { useDailyQuests } from "@/hooks/useDailyQuests";
+import { calculateTestXP } from "@/lib/xp-system";
+import XPGainDisplay from "./XPGainDisplay";
+import AchievementUnlockModal from "./AchievementUnlockModal";
+import LevelUpModal from "./LevelUpModal";
+import { QuestCompleteToastContainer } from "./QuestCompleteToast";
+import ShareResultCard from "./ShareResultCard";
 
 interface ResultsProps {
   wpm: number;
   accuracy: number;
   errors: number;
   onReset: () => void;
+  charsTyped?: number;
+  duration?: number;
 }
 
-export default function Results({ wpm, accuracy, errors, onReset }: ResultsProps) {
+export default function Results({ wpm, accuracy, errors, onReset, charsTyped, duration }: ResultsProps) {
   const [userName, setUserName] = useState("");
   const [showCertificate, setShowCertificate] = useState(false);
+  const [showShare, setShowShare] = useState(false);
   const qualifies = qualifiesForCertificate(accuracy);
+
+  // XP and achievement hooks
+  const xpHook = useXP();
+  const achievementsHook = useAchievements();
+  const streakHook = useStreak();
+  const questsHook = useDailyQuests();
+  const [xpReward, setXpReward] = useState<ReturnType<typeof calculateTestXP> | null>(null);
+  const [currentAchievement, setCurrentAchievement] = useState<number>(0);
+
+  // Save test record and calculate rewards
+  useEffect(() => {
+    const stats = getStatistics();
+    const previousBestWpm = stats.bestWpm;
+
+    const testRecord = saveTestRecord({
+      mode: 'standard',
+      wpm: Math.round(wpm),
+      accuracy,
+      errors,
+      charsTyped: charsTyped || 0,
+      duration: duration || 60,
+    });
+
+    // Update streak
+    streakHook.recordCompletion(Math.round(wpm), accuracy);
+
+    // Update quest progress
+    questsHook.updateProgress(testRecord, previousBestWpm);
+
+    // Calculate XP
+    const reward = calculateTestXP(
+      Math.round(wpm),
+      accuracy,
+      'standard',
+      streakHook.streakData.currentStreak
+    );
+    setXpReward(reward);
+
+    // Add XP
+    xpHook.addXP(reward.totalXP, 'Test completion');
+
+    // Check for new achievements
+    achievementsHook.checkAndUpdate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wpm, accuracy, errors, charsTyped, duration]);
 
   // Trigger confetti animation when user qualifies
   useEffect(() => {
@@ -54,8 +113,57 @@ export default function Results({ wpm, accuracy, errors, onReset }: ResultsProps
     }
   }, [qualifies]);
 
+  // Handle achievement modal queue
+  const handleDismissAchievement = () => {
+    if (achievementsHook.newlyUnlocked[currentAchievement]) {
+      achievementsHook.dismissNewAchievement(
+        achievementsHook.newlyUnlocked[currentAchievement].id
+      );
+    }
+    setCurrentAchievement(prev => prev + 1);
+  };
+
+  const showingAchievement = currentAchievement < achievementsHook.newlyUnlocked.length;
+  const currentAchievementDef = showingAchievement
+    ? achievementsHook.newlyUnlocked[currentAchievement]
+    : null;
+
   return (
     <div className="max-w-4xl mx-auto">
+      {/* Quest Complete Toasts */}
+      <QuestCompleteToastContainer
+        quests={questsHook.newlyCompleted}
+        onDismiss={questsHook.dismissCompleted}
+      />
+
+      {/* Share Result Card */}
+      {showShare && (
+        <ShareResultCard
+          wpm={Math.round(wpm)}
+          accuracy={accuracy}
+          onClose={() => setShowShare(false)}
+        />
+      )}
+
+      {/* Achievement Unlock Modal */}
+      {currentAchievementDef && (
+        <AchievementUnlockModal
+          achievement={currentAchievementDef}
+          onClose={handleDismissAchievement}
+        />
+      )}
+
+      {/* Level Up Modal */}
+      {xpHook.leveledUp && !showingAchievement && (
+        <LevelUpModal
+          oldLevel={xpHook.previousLevel}
+          newLevel={xpHook.level}
+          totalXP={xpHook.totalXP}
+          nextLevelXP={xpHook.nextLevelXP}
+          onClose={xpHook.dismissLevelUp}
+        />
+      )}
+
       {/* AdSense Placeholder - Above Results */}
       {/* AdSense ad unit - Test results top */}
 
@@ -84,6 +192,20 @@ export default function Results({ wpm, accuracy, errors, onReset }: ResultsProps
           <div className="text-gray-600 font-semibold">Errors</div>
         </div>
       </div>
+
+      {/* XP Gain Display */}
+      {xpReward && (
+        <div className="mb-8">
+          <XPGainDisplay
+            reward={xpReward}
+            level={xpHook.level}
+            currentLevelXP={xpHook.currentLevelXP}
+            nextLevelXP={xpHook.nextLevelXP}
+            progress={xpHook.progress}
+            totalXP={xpHook.totalXP}
+          />
+        </div>
+      )}
 
       {/* Certificate Section */}
       {qualifies ? (
@@ -151,13 +273,19 @@ export default function Results({ wpm, accuracy, errors, onReset }: ResultsProps
         </div>
       )}
 
-      {/* Try Again Button */}
-      <div className="text-center">
+      {/* Action Buttons */}
+      <div className="text-center flex gap-4 justify-center">
         <button
           onClick={onReset}
           className="bg-primary hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg hover:shadow-xl"
         >
           Try Again
+        </button>
+        <button
+          onClick={() => setShowShare(true)}
+          className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-all shadow-lg hover:shadow-xl"
+        >
+          📤 Share Result
         </button>
       </div>
 
